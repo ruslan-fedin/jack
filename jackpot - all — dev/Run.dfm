@@ -4,7 +4,7 @@ object TRun: TTRun
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = #1043#1083#1072#1074#1085#1072#1103
   ClientHeight = 643
-  ClientWidth = 375
+  ClientWidth = 712
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clWindowText
@@ -6999,7 +6999,7 @@ object TRun: TTRun
   object Label7: TLabel
     Left = 0
     Top = 0
-    Width = 375
+    Width = 712
     Height = 15
     Align = alTop
     Alignment = taCenter
@@ -7024,7 +7024,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 0
+    TabOrder = 8
     OnClick = BtnExitClick
   end
   object BtnAbout: TButton
@@ -7039,7 +7039,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 1
+    TabOrder = 5
     OnClick = BtnAboutClick
   end
   object BtnLogQut: TButton
@@ -7054,7 +7054,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 2
+    TabOrder = 7
     OnClick = BtnLogQutClick
   end
   object BtnLic: TButton
@@ -7069,7 +7069,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 3
+    TabOrder = 6
     OnClick = BtnLicClick
   end
   object BtnSettings: TButton
@@ -7099,7 +7099,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 5
+    TabOrder = 3
     OnClick = BtnOtcClick
   end
   object BtnSM: TButton
@@ -7114,7 +7114,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 6
+    TabOrder = 2
     OnClick = BtnSMClick
   end
   object BtnClients: TButton
@@ -7129,7 +7129,7 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 7
+    TabOrder = 1
     OnClick = BtnClientsClick
   end
   object BtnSotr: TButton
@@ -7144,11 +7144,11 @@ object TRun: TTRun
     Font.Name = 'Microsoft Sans Serif'
     Font.Style = []
     ParentFont = False
-    TabOrder = 8
+    TabOrder = 0
     OnClick = BtnSotrClick
   end
   object GroupBox1: TGroupBox
-    Left = 0
+    Left = 335
     Top = 21
     Width = 369
     Height = 420
@@ -7253,10 +7253,11 @@ object TRun: TTRun
   object StatusBar1: TStatusBar
     Left = 0
     Top = 624
-    Width = 375
+    Width = 712
     Height = 19
     Panels = <>
     SimpleText = 'mmnm'
+    ExplicitWidth = 375
   end
   object IdHTTP1: TIdHTTP
     ProxyParams.BasicAuthentication = False
