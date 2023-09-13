@@ -1,9 +1,9 @@
 object TQuery: TTQuery
-  Left = 0
-  Top = 0
+  Left = 257
+  Top = 113
   Caption = #1057#1052
-  ClientHeight = 611
-  ClientWidth = 1094
+  ClientHeight = 604
+  ClientWidth = 1154
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
   Font.Color = clBlack
@@ -15,48 +15,23 @@ object TQuery: TTQuery
   PopupMenu = PopupMenu1
   Position = poDesktopCenter
   OnCreate = FormCreate
+  OnShow = FormShow
   PixelsPerInch = 96
   TextHeight = 15
   object StatusBar1: TStatusBar
     Left = 0
-    Top = 592
-    Width = 1094
+    Top = 585
+    Width = 1154
     Height = 19
     Panels = <>
-    ExplicitWidth = 998
-  end
-  object BindNavigator1: TBindNavigator
-    Left = 0
-    Top = 544
-    Width = 1094
-    Height = 48
-    DataSource = BindSourceDB1
-    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete]
-    Align = alBottom
-    Flat = True
-    Hints.Strings = (
-      #1055#1077#1088#1074#1072#1103' '#1079#1072#1087#1080#1089#1100
-      #1055#1088#1077#1076#1099#1076#1091#1097#1072#1103' '#1079#1072#1087#1080#1089#1100
-      #1057#1083#1077#1076#1091#1102#1097#1072#1103' '#1079#1072#1087#1080#1089#1100
-      #1055#1086#1089#1083#1077#1076#1085#1103#1103' '#1079#1072#1087#1080#1089#1100
-      #1042#1089#1090#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
-      #1059#1076#1072#1083#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
-      #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1079#1072#1087#1080#1089#1100
-      #1056#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1090#1100' '#1089#1086#1086#1073#1097#1077#1085#1080#1077
-      #1054#1090#1084#1077#1085#1080#1090#1100' '#1088#1077#1076#1072#1082#1090#1080#1088#1086#1074#1072#1085#1080#1077
-      #1054#1073#1085#1086#1074#1080#1090#1100' '#1076#1072#1085#1085#1099#1077
-      #1055#1088#1080#1084#1077#1085#1103#1090#1100' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103
-      #1054#1090#1084#1077#1085#1080#1090#1100' '#1086#1073#1085#1086#1074#1083#1077#1085#1080#1103)
-    Orientation = orHorizontal
-    TabOrder = 1
-    OnClick = BindNavigator1Click
-    ExplicitWidth = 998
+    ExplicitTop = 592
+    ExplicitWidth = 1094
   end
   object DBGridEh1: TDBGridEh
     Left = 0
-    Top = 70
-    Width = 824
-    Height = 474
+    Top = 121
+    Width = 884
+    Height = 416
     PopupMenuParams.BuildMenuOnPopup = True
     PopupMenuParams.UseIndicatorMenu = True
     Align = alClient
@@ -132,7 +107,7 @@ object TQuery: TTQuery
     STFilter.Visible = True
     SumList.Active = True
     SumList.VirtualRecords = True
-    TabOrder = 2
+    TabOrder = 1
     TitleParams.FillStyle = cfstGradientEh
     TitleParams.Font.Charset = DEFAULT_CHARSET
     TitleParams.Font.Color = clWindowText
@@ -146,7 +121,6 @@ object TQuery: TTQuery
     TitleParams.VTitleMargin = 5
     Columns = <
       item
-        Alignment = taCenter
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
@@ -155,167 +129,102 @@ object TQuery: TTQuery
         Visible = False
       end
       item
-        Alignment = taCenter
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'Number'
         Footers = <>
-        Width = 69
       end
       item
-        Alignment = taCenter
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'KodFIO'
         Footers = <>
-        Width = 89
       end
       item
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'FioSel'
         Footers = <>
-        Width = 329
+        Width = 328
       end
       item
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'Data'
         Footers = <>
-        Width = 215
+        Width = 183
       end
       item
-        Alignment = taRightJustify
-        AutoDropDown = True
         CellButtons = <>
-        DisplayFormat = ',#0.##'
         DynProps = <>
         EditButtons = <>
         FieldName = 'JackPot'
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
-        Footer.ValueType = fvtSum
         Footers = <>
-        Width = 123
       end
       item
-        Alignment = taCenter
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'Num_ter'
         Footers = <>
+        Width = 127
       end
       item
-        Alignment = taRightJustify
-        AutoDropDown = True
         CellButtons = <>
         DisplayFormat = ',#0.##'
         DynProps = <>
         EditButtons = <>
         FieldName = 'Den'
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
         Footer.ValueType = fvtSum
         Footers = <>
       end
       item
-        Alignment = taRightJustify
-        AutoDropDown = True
         CellButtons = <>
         DisplayFormat = ',#0.##'
         DynProps = <>
         EditButtons = <>
         FieldName = 'P'
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
         Footer.ValueType = fvtSum
         Footers = <>
       end
       item
-        Alignment = taRightJustify
-        AutoDropDown = True
         CellButtons = <>
         DisplayFormat = ',#0.##'
         DynProps = <>
         EditButtons = <>
         FieldName = 'Payment'
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
         Footer.ValueType = fvtSum
         Footers = <>
       end
       item
-        Alignment = taRightJustify
-        AutoDropDown = True
         CellButtons = <>
         DisplayFormat = ',#0.##'
         DynProps = <>
         EditButtons = <>
         FieldName = 'Summa'
-        Font.Charset = DEFAULT_CHARSET
-        Font.Color = clMaroon
-        Font.Height = -16
-        Font.Name = 'Microsoft Sans Serif'
-        Font.Style = []
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
         Footer.ValueType = fvtSum
         Footers = <>
       end
       item
-        Alignment = taCenter
-        AutoDropDown = True
-        CellButtons = <>
-        DynProps = <>
-        EditButtons = <>
-        FieldName = 'Ticket'
-        Footer.DisplayFormat = ',#0.##'
-        Footer.Font.Charset = DEFAULT_CHARSET
-        Footer.Font.Color = clMaroon
-        Footer.Font.Height = -16
-        Footer.Font.Name = 'Microsoft Sans Serif'
-        Footer.Font.Style = []
-        Footer.ValueType = fvtSum
-        Footers = <>
-      end
-      item
-        AutoDropDown = True
         CellButtons = <>
         DynProps = <>
         EditButtons = <>
         FieldName = 'Foto'
         Footers = <>
         Visible = False
+      end
+      item
+        CellButtons = <>
+        DisplayFormat = ',#0.##'
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Ticket'
+        Footer.ValueType = fvtSum
+        Footers = <>
       end>
     object RowDetailData: TRowDetailPanelControlEh
     end
@@ -323,11 +232,11 @@ object TQuery: TTQuery
   object Panel1: TPanel
     Left = 0
     Top = 0
-    Width = 1094
-    Height = 70
+    Width = 1154
+    Height = 121
     Align = alTop
-    TabOrder = 3
-    ExplicitWidth = 998
+    TabOrder = 2
+    ExplicitWidth = 1094
     object Button1: TButton
       Left = 16
       Top = 18
@@ -424,16 +333,26 @@ object TQuery: TTQuery
       TabOrder = 5
       OnClick = CheckBox1Click
     end
+    object CheckBox2: TCheckBox
+      Left = 480
+      Top = 80
+      Width = 97
+      Height = 17
+      Caption = 'CheckBox2'
+      TabOrder = 6
+    end
   end
   object Panel3: TPanel
-    Left = 824
-    Top = 70
+    Left = 884
+    Top = 121
     Width = 270
-    Height = 474
+    Height = 416
     Align = alRight
-    TabOrder = 4
+    TabOrder = 3
     Visible = False
-    ExplicitLeft = 728
+    ExplicitLeft = 824
+    ExplicitTop = 70
+    ExplicitHeight = 474
     object Image1: TImage
       Left = 0
       Top = 6
@@ -466,6 +385,17 @@ object TQuery: TTQuery
       TabOrder = 1
       Visible = False
     end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 537
+    Width = 1154
+    Height = 48
+    DataSource = DataModuleDB.DataSource2
+    Align = alBottom
+    TabOrder = 4
+    ExplicitTop = 544
+    ExplicitWidth = 1094
   end
   object MainMenu1: TMainMenu
     Left = 96
@@ -547,16 +477,5 @@ object TQuery: TTQuery
       Caption = #1042#1099#1093#1086#1076
       OnClick = N11Click
     end
-  end
-  object BindSourceDB1: TBindSourceDB
-    DataSet = DataModuleDB.ADOTableWorks
-    ScopeMappings = <>
-    Left = 352
-    Top = 96
-  end
-  object BindSourceDB2: TBindSourceDB
-    ScopeMappings = <>
-    Left = 616
-    Top = 408
   end
 end

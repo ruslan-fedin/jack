@@ -1,16 +1,10 @@
 ﻿[]
-Coordinates=393,591,105,36
+Coordinates=449,10,111,278
 Visible=False
 ExplicitSubNodes=ADOTableOtc
 
 [ADOTableClients]
 Coordinates=10,267,114,212
-
-[ADOTableWorksFioSel]
-Coordinates=608,1,147,36
-
-[ADOTableWorksKodFIO]
-Coordinates=608,111,155,36
 
 [ADOTableSotrRol]
 Coordinates=434,111,117,36
@@ -18,24 +12,11 @@ Coordinates=434,111,117,36
 [ADOTableSotrFio]
 Coordinates=434,276,116,36
 
-[ADOTableWorksNumber]
-Coordinates=608,276,156,36
-
 [ADOConnectionJackPot]
 Coordinates=608,331,153,36
 
 [ADOTableSotrData]
 Coordinates=434,496,125,36
-
-[ADOTableWorks]
-Coordinates=449,10,111,278
-Visible=False
-
-[ADOTableWorksData]
-Coordinates=412,551,138,36
-
-[ADOTableWorksKod]
-Coordinates=608,386,133,36
 
 [ADOTableSotr]
 Coordinates=134,267,98,146
@@ -67,9 +48,6 @@ Coordinates=270,419,117,36
 
 [ADOTableOtc]
 Coordinates=270,166,94,234
-
-[ADOTableWorksStringField]
-Coordinates=608,56,173,36
 
 [DataSource3]
 Coordinates=0,0,89,36

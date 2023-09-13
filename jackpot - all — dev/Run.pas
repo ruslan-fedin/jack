@@ -89,6 +89,8 @@ var
   text: string;
   keyharddisk: string;
   day_end: string;
+  role: string;
+
 
 var
   put: string;
@@ -238,7 +240,7 @@ begin
 
   serialNumberDisk();
 
-  GetDateInt();
+  //GetDateInt();
   Label4.Caption := 'Дата: ' + datetostr(data_int);
   //
   // writeDataInt();
@@ -367,14 +369,11 @@ end;
 
 function TTRun.isRole(Login: string): String;
 
-var
- role: string;
-
 begin
 
 
 
-  // Выбирай значение переменной
+  // Выбираем роли за носим в переменную
   DataModuleDB.ADOQuerylogin.active := false;
   DataModuleDB.ADOQuerylogin.sql.clear;
   DataModuleDB.ADOQuerylogin.sql.Add('select *');
@@ -385,6 +384,20 @@ begin
   DataModuleDB.ADOQuerylogin.active := true;
   role := DataModuleDB.ADOQuerylogin.FieldByName('rol').AsString;
   ShowMessage(role);
+
+  //Условия ролям
+
+  if role = 'User' then
+
+  BtnSettings.Enabled:=false;
+
+
+
+
+  if role = 'Admin' then
+
+  Settings.Btnpass.enabled:=false;
+
 
 
 

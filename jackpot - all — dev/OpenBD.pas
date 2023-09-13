@@ -55,7 +55,7 @@ DataModuleDB.DataSource2.Enabled:=False;
 //DataModuleDB.DataSourceWorks.Enabled:=False;
 
 DataModuleDB.ADOTableClients.Active:=False;
-DataModuleDB.ADOTableWorks.Active:=False;
+DataModuleDB.ADOQueryWorks.Active:=False;
 DataModuleDB.ADOConnectionJackPot.Close;
 DataModuleDB.ADOConnectionJackPot.ConnectionString:='Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source='+BDopen.Edit1.Text+';Persist Security info=False;';
 DataModuleDB.ADOConnectionJackPot.Open;
@@ -66,7 +66,7 @@ DataModuleDB.DataSource2.Enabled:=True;
 //DataModuleDB.DataSourceWorks.Enabled:=True;
 
 
-DataModuleDB.ADOTableWorks.Active:=True;
+DataModuleDB.ADOQueryWorks.Active:=True;
 DataModuleDB.ADOTableClients.Active:=True;
 BDopen.Close;
 end;
@@ -83,7 +83,7 @@ end;
 
 procedure TBDopen.OpenDialog1Show(Sender: TObject);
 begin
-DataModuleDB.ADOTableWorks.Active:=False;
+DataModuleDB.ADOQueryWorks.Active:=False;
 DataModuleDB.ADOTableClients.Active:=False;
 DataModuleDB.DataSource1.Enabled:=False;
 DataModuleDB.DataSource2.Enabled:=False;

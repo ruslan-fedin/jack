@@ -34,21 +34,20 @@ type
     Excel2: TMenuItem;
     Word4: TMenuItem;
     N11: TMenuItem;
-    BindNavigator1: TBindNavigator;
     DBGridEh1: TDBGridEh;
-    BindSourceDB1: TBindSourceDB;
     Panel1: TPanel;
     Button1: TButton;
     Button2: TButton;
     Button3: TButton;
     Button4: TButton;
     Button5: TButton;
-    BindSourceDB2: TBindSourceDB;
     Panel3: TPanel;
     Image1: TImage;
     Button7: TButton;
     DBMemo1: TDBMemo;
     CheckBox1: TCheckBox;
+    CheckBox2: TCheckBox;
+    DBNavigator1: TDBNavigator;
   
 
 
@@ -73,6 +72,7 @@ type
     procedure N13Click(Sender: TObject);
     procedure N6Click(Sender: TObject);
     procedure CheckBox1Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
 
   private
     { Private declarations }
@@ -88,7 +88,7 @@ implementation
 {$R *.dfm}
 
 uses DataModule, Works, Previewdb, UnitWorksAdd, UnitWorksEdit, UnitWorksRemove,
-  ABOUT, FotoUnit;
+  ABOUT, FotoUnit, Run;
 
 
 
@@ -97,8 +97,8 @@ procedure TTQuery.BindNavigator1Click(Sender: TObject; Button: TNavigateButton);
 begin
  if button = nbRefresh then
    begin
-      DataModuleDB.ADOTableWorks.Requery;
-      DataModuleDB.ADOTableWorks.Refresh;
+      DataModuleDB.ADOQueryWorks.Requery;
+      DataModuleDB.ADOQueryWorks.Refresh;
 
 
    end;
@@ -107,8 +107,8 @@ end;
 procedure TTQuery.Button1Click(Sender: TObject);
 begin
 
-         DataModuleDB.ADOTableWorks.Active:=true;
-         DataModuleDB.ADOTableWorks.Insert;
+         DataModuleDB.ADOQueryWorks.Active:=true;
+         DataModuleDB.ADOQueryWorks.Insert;
 
 
 WorksAdd.ShowModal;
@@ -190,6 +190,21 @@ begin
 DbUtilsEh.SQLFilterMarker := '1=1 AND';
 end;
 
+procedure TTQuery.FormShow(Sender: TObject);
+begin
+if role = 'User' then
+{DataModuleDB.ADOTableWorks.active := false;
+DataModuleDB.ADOTableWorks.sql.clear;
+DataModuleDB.ADOTableWorks.sql.text:='select * from Works where Data =:log';
+DataModuleDB.ADOTableWorks.Parameters[0].Value := ;
+DataModuleDB.ADOTableWorks.Active:= true;
+ }
+
+  DataModuleDB.ADOQuerylogin.Parameters.ParamByName('log').value := Login;
+
+  DataModuleDB.ADOQuerylogin.active := true;
+end;
+
 procedure TTQuery.N11Click(Sender: TObject);
 begin
 TQuery.Close;
@@ -202,8 +217,8 @@ end;
 procedure TTQuery.N2Click(Sender: TObject);
 begin
 
-          DataModuleDB.ADOTableWorks.Active:=true;
-         DataModuleDB.ADOTableWorks.Insert;
+          DataModuleDB.ADOQueryWorks.Active:=true;
+         DataModuleDB.ADOQueryWorks.Insert;
 
 
 WorksAdd.ShowModal;

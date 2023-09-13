@@ -52,11 +52,11 @@ uses Query, DataModule;
 procedure TWorksAdd.Button1Click(Sender: TObject);
 begin
 
-DataModuleDB.ADOTableWorks.Append;
+DataModuleDB.ADOQueryWorks.Append;
 
 
-DataModuleDB.ADOTableWorks.Requery;
-DataModuleDB.ADOTableWorks.Last;
+DataModuleDB.ADOQueryWorks.Requery;
+DataModuleDB.ADOQueryWorks.Last;
 WorksAdd.Close;
 
 

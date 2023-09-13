@@ -104,21 +104,21 @@ end;
 // Выключаем кнопки на главной форме
 function BtnFalseMain: string;
 begin
-  Trun.BtnSotr.Visible := false;
-  Trun.BtnClients.Visible := false;
-  Trun.BtnSM.Visible := false;
-  Trun.BtnOtc.Visible := false;
-  Trun.BtnSettings.Visible := false;
+  Trun.BtnSotr.Enabled := false;
+  Trun.BtnClients.Enabled := false;
+  Trun.BtnSM.Enabled := false;
+  Trun.BtnOtc.Enabled := false;
+  Trun.BtnSettings.Enabled := false;
 end;
 
 // Включаем кнопки на главной форме
 function BtnTrueMain: string;
 begin
-  Trun.BtnSotr.Visible := true;
-  Trun.BtnClients.Visible := true;
-  Trun.BtnSM.Visible := true;
-  Trun.BtnOtc.Visible := true;
-  Trun.BtnSettings.Visible := true;
+  Trun.BtnSotr.Enabled := true;
+  Trun.BtnClients.Enabled := true;
+  Trun.BtnSM.Enabled := true;
+  Trun.BtnOtc.Enabled := true;
+  Trun.BtnSettings.Enabled := true;
 end;
 
 end.

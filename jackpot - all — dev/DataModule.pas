@@ -8,15 +8,9 @@ uses
 type
   TDataModuleDB = class(TDataModule)
     ADOConnectionJackPot: TADOConnection;
-    ADOTableWorks: TADOTable;
     ADOTableClients: TADOTable;
-    ADOTableWorksKod: TAutoIncField;
-    ADOTableWorksKodFIO: TIntegerField;
-    ADOTableWorksData: TDateTimeField;
-    ADOTableWorksFioSel: TStringField;
     DataSource1: TDataSource;
     DataSource2: TDataSource;
-    ADOTableWorksNumber: TIntegerField;
     DataSource3: TDataSource;
     ADOTableOtc: TADOTable;
     ADOTableOtcKod: TAutoIncField;
@@ -24,7 +18,6 @@ type
     ADOTableOtcData: TDateTimeField;
     ADOTableOtcStringField: TStringField;
     ADOTableOtcFioSel: TStringField;
-    ADOTableWorksStringField: TStringField;
     ADOQuerylogin: TADOQuery;
     DataSourcelogin: TDataSource;
     ADOQueryloginkod: TAutoIncField;
@@ -47,13 +40,6 @@ type
     ADOTableClientsOvd: TWideStringField;
     ADOTableClientsNote: TWideStringField;
     ADOTableClientsFoto: TWideStringField;
-    ADOTableWorksNum_ter: TIntegerField;
-    ADOTableWorksDen: TFloatField;
-    ADOTableWorksTicket: TIntegerField;
-    ADOTableWorksP: TFloatField;
-    ADOTableWorksPayment: TFloatField;
-    ADOTableWorksSumma: TFloatField;
-    ADOTableWorksJackPot: TFloatField;
     ADOTableOtcIn: TFloatField;
     ADOTableOtcOut: TFloatField;
     ADOTableOtcRez: TFloatField;
@@ -61,7 +47,20 @@ type
     ADOTableSotrPass: TWideStringField;
     ADOQueryloginpassword: TWideStringField;
     ADOQueryloginrole: TWideStringField;
-    procedure ADOTableWorksCalcFields(DataSet: TDataSet);
+    ADOQueryWorks: TADOQuery;
+    ADOQueryWorksKod: TAutoIncField;
+    ADOQueryWorksKodFIO: TIntegerField;
+    ADOQueryWorksData: TDateTimeField;
+    ADOQueryWorksJackPot: TFloatField;
+    ADOQueryWorksNum_ter: TIntegerField;
+    ADOQueryWorksDen: TFloatField;
+    ADOQueryWorksP: TFloatField;
+    ADOQueryWorksPayment: TFloatField;
+    ADOQueryWorksTicket: TIntegerField;
+    ADOQueryWorksNumber: TIntegerField;
+    ADOQueryWorksFioSel: TStringField;
+    ADOQueryWorksSumma: TFloatField;
+    ADOQueryWorksFoto: TStringField;
     procedure ADOQueryWorksCalcFields(DataSet: TDataSet);
     procedure ADOQuery1CalcFields(DataSet: TDataSet);
     procedure ADOTableWorksAfterScroll(DataSet: TDataSet);
@@ -69,6 +68,7 @@ type
     procedure ADOTableOtcCalcFields(DataSet: TDataSet);
     procedure ADOTableOtcAfterScroll(DataSet: TDataSet);
     procedure DataSourcelogtablUpdateData(Sender: TObject);
+    procedure ADOQueryWorksAfterScroll(DataSet: TDataSet);
 
 
   private
@@ -96,11 +96,27 @@ begin
   // DataModuleDB.ADOTableWorks.AsInteger:=abs(DataModuleDB.ADOTableWorks.RecNo);
 end;
 
+procedure TDataModuleDB.ADOQueryWorksAfterScroll(DataSet: TDataSet);
+begin
+
+    if not Assigned(TQuery) then
+    Exit;
+  if TQuery.DBMemo1.Text = '' then
+    TQuery.Image1.Picture.LoadFromFile('default.png')
+
+  else
+    TQuery.Image1.Picture.LoadFromFile(TQuery.DBMemo1.Text)
+
+end;
+
 procedure TDataModuleDB.ADOQueryWorksCalcFields(DataSet: TDataSet);
 begin
 
-  // ADOQueryWorkssum.AsFloat := ADOQueryWorksJackPot.Value + ADOQueryWorksP.Value + ADOQueryWorksPayment.Value;
-
+    ADOQueryWorksSumma.Value := ADOQueryWorksJackPot.Value + ADOQueryWorksP.Value
+    + ADOQueryWorksPayment.Value;
+  // ADOTableWorksSumma.Value := ADOTableWorksP + ADOTableWorksJackPot
+  // DataModuleDB.ADOQuery1Number.AsInteger:=abs(DataModuleDB.ADOQuery1.RecNo);
+  ADOQueryWorksNumber.AsInteger := abs(ADOQueryWorks.RecNo);
 end;
 
 procedure TDataModuleDB.ADOTableClientsAfterScroll(DataSet: TDataSet);
@@ -148,16 +164,6 @@ begin
 
   // DataModuleDB.ADOTableWorks.RecNo
   // Worksedit.Label9.Caption:= ADOTableWorks.FieldByName('KodFIO').AsString;
-end;
-
-procedure TDataModuleDB.ADOTableWorksCalcFields(DataSet: TDataSet);
-begin
-
-  ADOTableWorksSumma.Value := ADOTableWorksJackPot.Value + ADOTableWorksP.Value
-    + ADOTableWorksPayment.Value;
-  // ADOTableWorksSumma.Value := ADOTableWorksP + ADOTableWorksJackPot
-  // DataModuleDB.ADOQuery1Number.AsInteger:=abs(DataModuleDB.ADOQuery1.RecNo);
-  ADOTableWorksNumber.AsInteger := abs(ADOTableWorks.RecNo);
 end;
 
 procedure TDataModuleDB.DataSourcelogtablUpdateData(Sender: TObject);

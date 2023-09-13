@@ -3,7 +3,7 @@ object Settings: TSettings
   Top = 0
   BorderIcons = [biSystemMenu, biMinimize]
   Caption = #1053#1072#1089#1090#1088#1086#1081#1082#1080
-  ClientHeight = 378
+  ClientHeight = 463
   ClientWidth = 323
   Color = clBtnFace
   Font.Charset = DEFAULT_CHARSET
@@ -61,8 +61,8 @@ object Settings: TSettings
     OnClick = BtnTimeClick
   end
   object BtnCloseSettings: TButton
-    Left = 8
-    Top = 304
+    Left = 10
+    Top = 384
     Width = 305
     Height = 57
     Caption = #1047#1072#1082#1088#1099#1090#1100
@@ -88,7 +88,6 @@ object Settings: TSettings
     Font.Style = []
     ParentFont = False
     TabOrder = 4
-    Visible = False
     OnClick = BtnLicClick
   end
 end

@@ -29,10 +29,6 @@ Coordinates=43,712,52,36
 [PopupMenu1]
 Coordinates=898,496,90,36
 
-[DataModuleDB.ADOTableWorks]
-Coordinates=124,165,201,234
-Visible=False
-
 [DataModuleDB.ADOTableClients]
 Coordinates=0,0,204,146
 
@@ -56,7 +52,7 @@ Coordinates=375,786,79,36
 Visible=True
 
 [DataModuleDB.]
-Coordinates=613,166,204,190
+Coordinates=335,175,201,234
 
 [DataModuleDB.ADOQuery1]
 Visible=False

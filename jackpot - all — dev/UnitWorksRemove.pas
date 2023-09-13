@@ -32,14 +32,14 @@ uses Query, DataModule;
 procedure TWorksRemove.Button1Click(Sender: TObject);
 begin
 
-DataModuleDB.ADOTableWorks.Delete;
+DataModuleDB.ADOQueryWorks.Delete;
 
 WorksRemove.close;
 end;
 
 procedure TWorksRemove.Button2Click(Sender: TObject);
 begin
-  DataModuleDB.ADOTableWorks.Cancel;
+  DataModuleDB.ADOQueryWorks.Cancel;
   WorksRemove.close;
 end;
 

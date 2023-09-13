@@ -21,97 +21,6 @@ object DataModuleDB: TDataModuleDB
     Left = 216
     Top = 24
   end
-  object ADOTableWorks: TADOTable
-    Active = True
-    Connection = ADOConnectionJackPot
-    CursorType = ctStatic
-    AfterScroll = ADOTableWorksAfterScroll
-    OnCalcFields = ADOTableWorksCalcFields
-    TableName = 'Works'
-    Left = 136
-    Top = 176
-    object ADOTableWorksKod: TAutoIncField
-      DisplayLabel = 'id'
-      FieldName = 'Kod'
-      ReadOnly = True
-    end
-    object ADOTableWorksNumber: TIntegerField
-      DisplayLabel = #1053#1086#1084#1077#1088
-      FieldKind = fkCalculated
-      FieldName = 'Number'
-      Calculated = True
-    end
-    object ADOTableWorksFioSel: TStringField
-      DisplayLabel = #1060#1048#1054
-      FieldKind = fkLookup
-      FieldName = 'FioSel'
-      LookupDataSet = ADOTableClients
-      LookupKeyFields = 'KodClient'
-      LookupResultField = 'FIO'
-      KeyFields = 'KodFIO'
-      Size = 80
-      Lookup = True
-    end
-    object ADOTableWorksKodFIO: TIntegerField
-      DisplayLabel = #1050#1086#1076' '#1050#1083#1080#1077#1085#1090#1072
-      FieldName = 'KodFIO'
-    end
-    object ADOTableWorksData: TDateTimeField
-      Alignment = taCenter
-      DisplayLabel = #1044#1072#1090#1072
-      FieldName = 'Data'
-    end
-    object ADOTableWorksJackPot: TFloatField
-      DisplayWidth = 45
-      FieldName = 'JackPot'
-      DisplayFormat = ',#0.##'
-      currency = True
-    end
-    object ADOTableWorksNum_ter: TIntegerField
-      DisplayLabel = #1053#1086#1084#1077#1088' '#1090#1077#1088#1084#1080#1085#1072#1083#1072' '
-      FieldName = 'Num_ter'
-    end
-    object ADOTableWorksDen: TFloatField
-      FieldName = 'Den'
-      DisplayFormat = ',#0.##'
-      currency = True
-    end
-    object ADOTableWorksP: TFloatField
-      FieldName = 'P'
-      DisplayFormat = ',#0.##'
-      currency = True
-    end
-    object ADOTableWorksPayment: TFloatField
-      DisplayLabel = #1042#1099#1087#1083#1072#1090#1072
-      FieldName = 'Payment'
-      DisplayFormat = ',#0.##'
-      currency = True
-    end
-    object ADOTableWorksSumma: TFloatField
-      DisplayLabel = #1057#1091#1084#1084#1072
-      FieldKind = fkCalculated
-      FieldName = 'Summa'
-      DisplayFormat = ',#0.##'
-      currency = True
-      Calculated = True
-    end
-    object ADOTableWorksTicket: TIntegerField
-      DisplayLabel = #1041#1080#1083#1077#1090#1099
-      FieldName = 'Ticket'
-    end
-    object ADOTableWorksStringField: TStringField
-      DisplayLabel = #1060#1086#1090#1086
-      DisplayWidth = 66
-      FieldKind = fkLookup
-      FieldName = 'Foto'
-      LookupDataSet = ADOTableClients
-      LookupKeyFields = 'KodClient'
-      LookupResultField = 'Foto'
-      KeyFields = 'KodFIO'
-      Size = 80
-      Lookup = True
-    end
-  end
   object ADOTableClients: TADOTable
     Active = True
     AutoCalcFields = False
@@ -165,7 +74,7 @@ object DataModuleDB: TDataModuleDB
     end
   end
   object DataSource2: TDataSource
-    DataSet = ADOTableWorks
+    DataSet = ADOQueryWorks
     Left = 64
     Top = 176
   end
@@ -369,6 +278,107 @@ object DataModuleDB: TDataModuleDB
     object ADOQueryTimenote: TWideStringField
       FieldName = 'note'
       Size = 255
+    end
+  end
+  object ADOQueryWorks: TADOQuery
+    Active = True
+    Connection = ADOConnectionJackPot
+    CursorType = ctStatic
+    AfterScroll = ADOQueryWorksAfterScroll
+    OnCalcFields = ADOQueryWorksCalcFields
+    Parameters = <>
+    SQL.Strings = (
+      'select * from works')
+    Left = 208
+    Top = 192
+    object ADOQueryWorksKod: TAutoIncField
+      DisplayLabel = 'id'
+      FieldName = 'Kod'
+      ReadOnly = True
+    end
+    object ADOQueryWorksNumber: TIntegerField
+      DisplayLabel = #1053#1086#1084#1077#1088
+      FieldKind = fkCalculated
+      FieldName = 'Number'
+      Calculated = True
+    end
+    object ADOQueryWorksFioSel: TStringField
+      DisplayLabel = #1060#1048#1054
+      FieldKind = fkLookup
+      FieldName = 'FioSel'
+      LookupDataSet = ADOTableClients
+      LookupKeyFields = 'KodClient'
+      LookupResultField = 'FIO'
+      KeyFields = 'KodFIO'
+      Size = 80
+      Lookup = True
+    end
+    object ADOQueryWorksKodFIO: TIntegerField
+      Alignment = taCenter
+      DisplayLabel = #1050#1086#1076' '#1050#1083#1080#1077#1085#1090#1072
+      FieldName = 'KodFIO'
+    end
+    object ADOQueryWorksData: TDateTimeField
+      Alignment = taCenter
+      DisplayLabel = #1044#1072#1090#1072
+      FieldName = 'Data'
+    end
+    object ADOQueryWorksJackPot: TFloatField
+      Alignment = taCenter
+      FieldName = 'JackPot'
+      DisplayFormat = ',#0.##'
+      EditFormat = ',#0.##'
+    end
+    object ADOQueryWorksNum_ter: TIntegerField
+      Alignment = taCenter
+      DisplayLabel = #1053#1086#1084#1077#1088' '#1090#1077#1088#1084#1080#1085#1072#1083#1072
+      FieldName = 'Num_ter'
+    end
+    object ADOQueryWorksDen: TFloatField
+      Alignment = taCenter
+      FieldName = 'Den'
+      DisplayFormat = ',#0.##'
+      EditFormat = ',#0.##'
+    end
+    object ADOQueryWorksP: TFloatField
+      Alignment = taCenter
+      FieldName = 'P'
+      DisplayFormat = ',#0.##'
+      EditFormat = ',#0.##'
+    end
+    object ADOQueryWorksPayment: TFloatField
+      Alignment = taCenter
+      DisplayLabel = #1042#1099#1087#1083#1072#1090#1072
+      FieldName = 'Payment'
+      DisplayFormat = ',#0.##'
+      EditFormat = ',#0.##'
+    end
+    object ADOQueryWorksSumma: TFloatField
+      Alignment = taCenter
+      DisplayLabel = #1057#1091#1084#1084#1072
+      FieldKind = fkCalculated
+      FieldName = 'Summa'
+      DisplayFormat = ',#0.##'
+      currency = True
+      Calculated = True
+    end
+    object ADOQueryWorksFoto: TStringField
+      DisplayLabel = #1060#1086#1090#1086
+      DisplayWidth = 66
+      FieldKind = fkLookup
+      FieldName = 'Foto'
+      LookupDataSet = ADOTableClients
+      LookupKeyFields = 'KodClient'
+      LookupResultField = 'Foto'
+      KeyFields = 'KodFIO'
+      Visible = False
+      Size = 80
+      Lookup = True
+    end
+    object ADOQueryWorksTicket: TIntegerField
+      Alignment = taCenter
+      DisplayLabel = #1041#1080#1083#1077#1090#1099
+      FieldName = 'Ticket'
     end
   end
 end
