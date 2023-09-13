@@ -88,7 +88,7 @@ implementation
 {$R *.dfm}
 
 uses DataModule, Works, Previewdb, UnitWorksAdd, UnitWorksEdit, UnitWorksRemove,
-  ABOUT, FotoUnit, Run;
+  ABOUT, FotoUnit, Run, func;
 
 
 
@@ -191,18 +191,24 @@ DbUtilsEh.SQLFilterMarker := '1=1 AND';
 end;
 
 procedure TTQuery.FormShow(Sender: TObject);
+
+
+//data_worksD: Tdate;
+//data_worksS: string;
 begin
+
 if role = 'User' then
-{DataModuleDB.ADOTableWorks.active := false;
-DataModuleDB.ADOTableWorks.sql.clear;
-DataModuleDB.ADOTableWorks.sql.text:='select * from Works where Data =:log';
-DataModuleDB.ADOTableWorks.Parameters[0].Value := ;
-DataModuleDB.ADOTableWorks.Active:= true;
- }
+   begin
 
-  DataModuleDB.ADOQuerylogin.Parameters.ParamByName('log').value := Login;
 
-  DataModuleDB.ADOQuerylogin.active := true;
+
+
+DataModuleDB.ADOQueryWorks.active := false;
+DataModuleDB.ADOQueryWorks.sql.clear;
+DataModuleDB.ADOQueryWorks.sql.text:='select * from Works where Data =:log';
+DataModuleDB.ADOQueryWorks.Parameters[0].Value := GetDataNow() ;
+DataModuleDB.ADOQueryWorks.Active:= true;
+   end;
 end;
 
 procedure TTQuery.N11Click(Sender: TObject);

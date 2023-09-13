@@ -10,7 +10,6 @@ function HashPassword(const Password: string): string;
 function SerialNumberDisk(): string;
 function LogOut(): string;
 function SetDbValue(): string;
-function GetDataNow():string;
 //function ConnectDB(): string;
 
 implementation
@@ -27,16 +26,6 @@ var
   f: TextFile;
 
 
-  function GetDataNow():string;
-var   data_worksD: Tdate;
-data_worksS: string;
-  begin
-
-  data_worksD:= now;
-  data_worksS:= Datetostr(data_worksD);
-    result:=data_worksS;
-
-  end;
 
 
 
