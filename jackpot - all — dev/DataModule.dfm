@@ -381,4 +381,67 @@ object DataModuleDB: TDataModuleDB
       FieldName = 'Ticket'
     end
   end
+  object ADOQueryOtc: TADOQuery
+    Active = True
+    Connection = ADOConnectionJackPot
+    CursorType = ctStatic
+    Parameters = <>
+    SQL.Strings = (
+      'select * from otc')
+    Left = 224
+    Top = 248
+    object ADOQueryOtcKod: TAutoIncField
+      DisplayLabel = #1050#1086#1076
+      DisplayWidth = 10
+      FieldName = 'Kod'
+      ReadOnly = True
+    end
+    object ADOQueryOtcKodClients: TIntegerField
+      DisplayLabel = #1050#1086#1076' '#1050#1083#1080#1077#1085#1090#1072
+      DisplayWidth = 10
+      FieldName = 'KodClients'
+    end
+    object ADOQueryOtcFioSel: TStringField
+      DisplayLabel = #1060#1048#1054
+      DisplayWidth = 15
+      FieldKind = fkLookup
+      FieldName = 'FioSel'
+      LookupDataSet = ADOTableClients
+      LookupKeyFields = 'KodClient'
+      LookupResultField = 'FIO'
+      KeyFields = 'KodClients'
+      Size = 80
+      Lookup = True
+    end
+    object ADOQueryOtcData: TDateTimeField
+      DisplayLabel = #1044#1072#1090#1072
+      DisplayWidth = 12
+      FieldName = 'Data'
+    end
+    object ADOQueryOtcIn: TFloatField
+      FieldName = 'In'
+    end
+    object ADOQueryOtcOut: TFloatField
+      FieldName = 'Out'
+    end
+    object ADOQueryOtcRez: TFloatField
+      FieldKind = fkCalculated
+      FieldName = 'Rez'
+      DisplayFormat = ',#0.##'
+      currency = True
+      Calculated = True
+    end
+    object ADOQueryOtcFoto: TStringField
+      DisplayLabel = #1060#1086#1090#1086
+      DisplayWidth = 66
+      FieldKind = fkLookup
+      FieldName = 'Foto'
+      LookupDataSet = ADOTableClients
+      LookupKeyFields = 'KodClient'
+      LookupResultField = 'Foto'
+      KeyFields = 'KodClients'
+      Size = 80
+      Lookup = True
+    end
+  end
 end

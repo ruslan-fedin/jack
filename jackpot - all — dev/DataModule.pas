@@ -61,6 +61,15 @@ type
     ADOQueryWorksFioSel: TStringField;
     ADOQueryWorksSumma: TFloatField;
     ADOQueryWorksFoto: TStringField;
+    ADOQueryOtc: TADOQuery;
+    ADOQueryOtcKod: TAutoIncField;
+    ADOQueryOtcKodClients: TIntegerField;
+    ADOQueryOtcFioSel: TStringField;
+    ADOQueryOtcData: TDateTimeField;
+    ADOQueryOtcIn: TFloatField;
+    ADOQueryOtcOut: TFloatField;
+    ADOQueryOtcRez: TFloatField;
+    ADOQueryOtcFoto: TStringField;
     procedure ADOQueryWorksCalcFields(DataSet: TDataSet);
     procedure ADOQuery1CalcFields(DataSet: TDataSet);
     procedure ADOTableWorksAfterScroll(DataSet: TDataSet);

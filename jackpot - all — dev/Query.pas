@@ -200,9 +200,6 @@ begin
 if role = 'User' then
    begin
 
-
-
-
 DataModuleDB.ADOQueryWorks.active := false;
 DataModuleDB.ADOQueryWorks.sql.clear;
 DataModuleDB.ADOQueryWorks.sql.text:='select * from Works where Data =:log';
