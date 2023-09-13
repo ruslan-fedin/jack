@@ -1,0 +1,55 @@
+unit OpenBD;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls;
+
+type
+  TBDopen = class(TForm)
+    Label1: TLabel;
+    Edit1: TEdit;
+    Button1: TButton;
+    Button2: TButton;
+    OpenDialog1: TOpenDialog;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  BDopen: TBDopen;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TBDopen.Button1Click(Sender: TObject);
+begin
+
+if BDopen.OpenDialog1.Execute then BDopen.Edit1.Text:= BDopen.OpenDialog1.FileName;
+
+
+
+end;
+
+procedure TBDopen.Button2Click(Sender: TObject);
+begin
+
+DataModuleDB.ADOTableWorks.Active:=False;
+DataModuleDB.ADOTableClients.Active:=False;
+DataModuleDB.ADOConnectionJackPot.Close;
+DataModuleDB.ADOConnectionJackPot.ConnectionString:='Provider=Microsoft.Jet.OLEDB.4.0;User ID=Admin;Data Source='+BDopen.Edit1.Text+';Persist Security info=False;';
+DataModuleDB.ADOConnectionJackPot.Open;
+DataModuleDB.ADOTableWorks.Active:=True;
+DataModuleDB.ADOTableClients.Active:=True;
+BDopen.Close;
+end;
+
+end.

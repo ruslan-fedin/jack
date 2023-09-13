@@ -1,0 +1,31 @@
+unit pass;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls,
+  DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL,
+  GridsEh, DBAxisGridsEh, DBGridEh;
+
+type
+  TPassword = class(TForm)
+    DBNavigator1: TDBNavigator;
+    DBGridEh1: TDBGridEh;
+    Panel1: TPanel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Password: TPassword;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+end.

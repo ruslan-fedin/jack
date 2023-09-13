@@ -1,0 +1,98 @@
+unit pass;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, Vcl.DBCtrls,
+  DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL,
+  GridsEh, DBAxisGridsEh, DBGridEh, Vcl.StdCtrls,System.Hash;
+
+type
+  TPassword = class(TForm)
+    DBNavigator1: TDBNavigator;
+    DBGridEh1: TDBGridEh;
+    Panel1: TPanel;
+    Button1: TButton;
+    Panel2: TPanel;
+    DBText1: TDBText;
+    DBText2: TDBText;
+    Edit1: TEdit;
+    Edit2: TEdit;
+    DBText3: TDBText;
+    Button2: TButton;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+
+    { Public declarations }
+  end;
+
+var
+  Password: TPassword;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TPassword.Button1Click(Sender: TObject);
+begin
+ with DataModuleDB.ADOQuerylogin do
+  begin
+    // запись в базу
+    SQL.Clear;
+    SQL.Text :=
+      'DELETE avtoriz.[data_in], * FROM avtoriz WHERE (((avtoriz.[data_in]) Is Not Null));';
+    ExecSQL;
+    SQL.Text :='select * from avtoriz';
+
+  end;
+  with DataModuleDB.ADOQuerylogin do
+  begin
+
+  SQL.Text :='select * from avtoriz';
+     DataModuleDB.ADOQuerylogin.Open;
+  end;
+ DataModuleDB.ADOTableLogin.Close;
+ DataModuleDB.ADOTableLogin.Open;
+
+end;
+
+
+procedure TPassword.Button2Click(Sender: TObject);
+var pass,pass1:string;
+begin
+
+pass:= THashMD5.GetHashString(edit1.Text);
+pass1:= THashMD5.GetHashString(edit2.Text);
+
+if pass<>pass1 then
+
+showmessage('Пароли не совпадают повторите попытку')
+else
+   showmessage('Пароли  совпадают' +pass);
+   DataModuleDB.ADOTablelogin.Edit;
+
+    DataModuleDB.ADOTablelogin.FieldByName('pass').AsString:=pass;
+    DataModuleDB.ADOTablelogin.Close;
+    DataModuleDB.ADOTablelogin.Open;
+
+{with DataModuleDB.ADOQuerylogin do
+
+  begin
+    // запись в базу
+    SQL.Clear;
+   // SQL.Text := 'DELETE avtoriz.[data_in], * FROM avtoriz WHERE (((avtoriz.[data_in]) Is Not Null));';
+    ExecSQL;
+            }
+
+
+
+end;
+
+
+end.

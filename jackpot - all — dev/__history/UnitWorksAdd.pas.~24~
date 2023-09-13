@@ -1,0 +1,68 @@
+unit UnitWorksAdd;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DBGridEh, DBLookupEh,
+  DBCtrlsEh, Vcl.ExtCtrls, PlannersEh, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TWorksAdd = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label6: TLabel;
+    Label7: TLabel;
+    DBText1: TDBText;
+    DBText2: TDBText;
+    Button1: TButton;
+    Button2: TButton;
+    Label8: TLabel;
+    DBEdit3: TDBEdit;
+    DBEdit4: TDBEdit;
+    DBEdit5: TDBEdit;
+    DBLookupComboboxEh1: TDBLookupComboboxEh;
+    DBDateTimeEditEh1: TDBDateTimeEditEh;
+    procedure Button2Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  WorksAdd: TWorksAdd;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule;
+
+procedure TWorksAdd.Button1Click(Sender: TObject);
+begin
+DataModuleDB.ADOQuery1.Insert;
+//DataModuleDB.ADOQuery1.FieldByName('Kod').AsInteger:=StrDouble; //(DBText2.Field.Value);;
+DataModuleDB.ADOQuery1.FieldByName('KodFIO').AsInteger:=StrToInt(DBText2.Field.Value);;
+DataModuleDB.ADOQuery1.FieldByName('fio').AsString:=DBLookupComboboxEh1.Field.Value;
+DataModuleDB.ADOQuery1.FieldByName('Data').AsDateTime:=DBDateTimeEditEh1.Value;
+DataModuleDB.ADOQuery1.FieldByName('JackPot').AsInteger:=StrToInt(DBEdit3.Text);
+DataModuleDB.ADOQuery1.FieldByName('P').AsInteger:=StrToInt(DBEdit4.Text);
+DataModuleDB.ADOQuery1.FieldByName('Payment').AsInteger:=StrToInt(DBEdit5.Text);
+DataModuleDB.ADOQuery1.Open;
+DataModuleDB.ADOTableWorks.Requery;
+WorksAdd.Close;
+
+
+end;
+
+procedure TWorksAdd.Button2Click(Sender: TObject);
+begin
+WorksAdd.Close;
+end;
+
+end.

@@ -1,0 +1,72 @@
+object Preview: TPreview
+  Left = 0
+  Top = 0
+  Caption = #1055#1088#1077#1076#1074#1072#1088#1080#1090#1077#1083#1100#1085#1099#1081' '#1087#1088#1086#1089#1084#1086#1090#1088
+  ClientHeight = 473
+  ClientWidth = 745
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object frxPreview1: TfrxPreview
+    Left = 0
+    Top = 0
+    Width = 745
+    Height = 473
+    Align = alClient
+    OutlineVisible = False
+    OutlineWidth = 120
+    ThumbnailVisible = False
+    FindFmVisible = False
+    UseReportHints = True
+    OutlineTreeSortType = dtsUnsorted
+    HideScrolls = False
+  end
+  object frxReport1: TfrxReport
+    Version = '6.9.3'
+    DotMatrixReport = False
+    IniFile = '\Software\Fast Reports'
+    Preview = frxPreview1
+    PreviewOptions.Buttons = [pbPrint, pbLoad, pbSave, pbExport, pbZoom, pbFind, pbOutline, pbPageSetup, pbTools, pbEdit, pbNavigator, pbExportQuick, pbCopy, pbSelection]
+    PreviewOptions.Zoom = 1.000000000000000000
+    PrintOptions.Printer = 'Default'
+    PrintOptions.PrintOnSheet = 0
+    ReportOptions.CreateDate = 44889.810790300930000000
+    ReportOptions.LastChange = 44889.810790300930000000
+    ScriptLanguage = 'PascalScript'
+    ScriptText.Strings = (
+      'begin'
+      ''
+      'end.')
+    Left = 384
+    Top = 304
+    Datasets = <>
+    Variables = <>
+    Style = <>
+    object Data: TfrxDataPage
+      Height = 1000.000000000000000000
+      Width = 1000.000000000000000000
+    end
+    object Page1: TfrxReportPage
+      PaperWidth = 210.000000000000000000
+      PaperHeight = 297.000000000000000000
+      PaperSize = 9
+      LeftMargin = 10.000000000000000000
+      RightMargin = 10.000000000000000000
+      TopMargin = 10.000000000000000000
+      BottomMargin = 10.000000000000000000
+      Frame.Typ = []
+      MirrorMode = []
+    end
+  end
+  object frxADOComponents1: TfrxADOComponents
+    DefaultDatabase = DataModuleDB.ADOConnectionJackPot
+    Left = 296
+    Top = 224
+  end
+end

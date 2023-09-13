@@ -1,0 +1,71 @@
+ unit UnitWorksEdit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DBGridEh, DBLookupEh,
+  DBCtrlsEh, Vcl.ExtCtrls, PlannersEh, Vcl.Mask, Vcl.DBCtrls, Vcl.ComCtrls;
+
+type
+  TWorksEdit = class(TForm)
+    Label1: TLabel;
+    Label2: TLabel;
+    Label3: TLabel;
+    Label4: TLabel;
+    Label5: TLabel;
+    Label7: TLabel;
+    Button1: TButton;
+    Button2: TButton;
+    Label8: TLabel;
+    Edit2: TEdit;
+    Edit3: TEdit;
+    Edit4: TEdit;
+    Label9: TLabel;
+    Label10: TLabel;
+    DateTimePicker1: TDateTimePicker;
+    procedure Button2Click(Sender: TObject);
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  WorksEdit: TWorksEdit;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule;
+
+procedure TWorksEdit.Button1Click(Sender: TObject);
+begin
+DatamoduleDB.ADOTableWorks.edit;
+DatamoduleDB.ADOTableWorks.FieldByName('JackPot').Value:=Edit2.Text;
+DatamoduleDB.ADOTableWorks.FieldByName('P').Value:=Edit3.Text;
+DatamoduleDB.ADOTableWorks.FieldByName('Payment').Value:=Edit4.Text;
+ WorksEdit.Close;
+end;
+
+procedure TWorksEdit.Button2Click(Sender: TObject);
+begin
+ WorksEdit.Close;
+end;
+
+ procedure TWorksEdit.FormShow(Sender: TObject);
+begin
+
+Label9.caption:=DatamoduleDB.ADOTableWorks.FieldByName('KodFIO').Value;
+Label10.caption:=DatamoduleDB.ADOTableWorks.FieldByName('FIOSel').Value;
+DateTimePicker1.DateTime:=DatamoduleDB.ADOTableWorks.FieldByName('Data').Value;
+Edit2.Text:=DatamoduleDB.ADOTableWorks.FieldByName('JackPot').Value;
+Edit3.Text:=DatamoduleDB.ADOTableWorks.FieldByName('P').Value;
+Edit4.Text:=DatamoduleDB.ADOTableWorks.FieldByName('Payment').Value;
+//Label10.caption:=IntToStr((Edit2.Text)+StrToInt(Edit3.Text)+ StrToInt(Edit4.Text));
+end;
+
+end.

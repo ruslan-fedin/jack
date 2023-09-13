@@ -1,0 +1,30 @@
+unit UnitWorksRemove;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DBGridEh, DBLookupEh,
+  DBCtrlsEh, Vcl.ExtCtrls, PlannersEh, Vcl.Mask, Vcl.DBCtrls;
+
+type
+  TWorksRemove = class(TForm)
+    Button1: TButton;
+    Button2: TButton;
+    Label8: TLabel;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  WorksRemove: TWorksRemove;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule;
+
+end.

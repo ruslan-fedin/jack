@@ -1,0 +1,73 @@
+unit Previewdb;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxPreview, frxADOComponents,
+  Data.DB, Data.Win.ADODB, Vcl.ExtCtrls, frxDBSet, frxDCtrl, frxExportXLS,
+  frxExportBaseDialog, frxExportPDF, Vcl.Menus, frxExportDOCX, frxExportRTF;
+
+type
+  TPreview = class(TForm)
+    frxReport1: TfrxReport;
+    frxPreview1: TfrxPreview;
+    Splitter1: TSplitter;
+    frxDBDataset1: TfrxDBDataset;
+    frxADOComponents1: TfrxADOComponents;
+    frxPDFExport1: TfrxPDFExport;
+    frxXLSExport1: TfrxXLSExport;
+    MainMenu1: TMainMenu;
+    N11: TMenuItem;
+    frxDOCXExport1: TfrxDOCXExport;
+    N1: TMenuItem;
+    Word1: TMenuItem;
+    Excel1: TMenuItem;
+    N2: TMenuItem;
+    N3: TMenuItem;
+    N4: TMenuItem;
+    frxRTFExport1: TfrxRTFExport;
+    procedure N1Click(Sender: TObject);
+    procedure Word1Click(Sender: TObject);
+    procedure Excel1Click(Sender: TObject);
+    procedure N4Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Preview: TPreview;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule, Works, Client;
+
+procedure TPreview.Excel1Click(Sender: TObject);
+begin
+Preview.frxReport1.ShowReport();
+Preview.frxReport1.Export(Preview.frxXLSExport1);
+end;
+
+procedure TPreview.N1Click(Sender: TObject);
+begin
+Preview.frxReport1.ShowReport();
+Preview.frxReport1.Export(Preview.frxPDFExport1);
+end;
+
+procedure TPreview.N4Click(Sender: TObject);
+begin
+Preview.frxReport1.ShowReport();
+Preview.frxReport1.Export(frxRTFExport1);
+end;
+
+procedure TPreview.Word1Click(Sender: TObject);
+begin
+Preview.frxReport1.ShowReport();
+Preview.frxReport1.Export(Preview.frxDOCXExport1);
+end;
+
+end.

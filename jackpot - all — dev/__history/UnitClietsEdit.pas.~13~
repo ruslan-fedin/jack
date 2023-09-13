@@ -1,0 +1,88 @@
+unit UnitClietsEdit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtDlgs,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage, Vcl.Mask;
+
+type
+  TClientsEdit = class(TForm)
+    Button2: TButton;
+    Button1: TButton;
+    Label8: TLabel;
+    Label7: TLabel;
+    Label2: TLabel;
+    Label1: TLabel;
+    Label3: TLabel;
+    OpenPictureDialog1: TOpenPictureDialog;
+    Button3: TButton;
+    Image1: TImage;
+    DBMemo1: TDBMemo;
+    DBEdit1: TDBEdit;
+    DBEdit2: TDBEdit;
+    DBEdit3: TDBEdit;
+    DBText1: TDBText;
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ClientsEdit: TClientsEdit;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TClientsEdit.Button1Click(Sender: TObject);
+begin
+  DatamoduleDB.ADOTableClients.Edit;
+  // DatamoduleDB.ADOTableClients.Insert;
+  // DatamoduleDB.ADOTableClients.Refresh;
+
+  // DatamoduleDB.ADOTableClients.FieldByName('KodClient').Value:=Label9.caption;
+
+  ClientsEdit.close;
+
+end;
+
+procedure TClientsEdit.Button2Click(Sender: TObject);
+begin
+  ClientsEdit.close;
+end;
+
+procedure TClientsEdit.Button3Click(Sender: TObject);
+var
+  pic: string;
+begin
+
+  DatamoduleDB.ADOTableClients.Edit;
+  if ClientsEdit.OpenPictureDialog1.Execute then
+    ClientsEdit.DBMemo1.Text := ClientsEdit.OpenPictureDialog1.FileName;
+  pic := ClientsEdit.DBMemo1.Text;
+  ClientsEdit.Image1.Picture.LoadFromFile(pic);
+  DatamoduleDB.ADOTableClients.Post;
+  // DatamoduleDB.ADOTableClients.Refresh;
+
+end;
+
+procedure TClientsEdit.FormCreate(Sender: TObject);
+begin
+  if ClientsEdit.DBMemo1.Text = '' then
+    ClientsEdit.Image1.Picture.LoadFromFile('img\default.png')
+  else
+    ClientsEdit.Image1.Picture.LoadFromFile(ClientsEdit.DBMemo1.Text);
+
+end;
+
+end.

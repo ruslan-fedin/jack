@@ -1,0 +1,38 @@
+unit Previewdb;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxPreview, frxADOComponents,
+  Data.DB, Data.Win.ADODB, Vcl.ExtCtrls, frxDBSet, frxDCtrl, frxExportXLS,
+  frxExportBaseDialog, frxExportPDF, Vcl.Menus, frxExportDOCX;
+
+type
+  TPreview = class(TForm)
+    frxReport1: TfrxReport;
+    frxPreview1: TfrxPreview;
+    Splitter1: TSplitter;
+    frxDBDataset1: TfrxDBDataset;
+    frxADOComponents1: TfrxADOComponents;
+    frxPDFExport1: TfrxPDFExport;
+    frxXLSExport1: TfrxXLSExport;
+    MainMenu1: TMainMenu;
+    N11: TMenuItem;
+    frxDOCXExport1: TfrxDOCXExport;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Preview: TPreview;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule, Works, Client;
+
+end.

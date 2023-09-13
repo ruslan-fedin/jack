@@ -1,0 +1,200 @@
+object OtcAdd: TOtcAdd
+  Left = 0
+  Top = 0
+  Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+  ClientHeight = 361
+  ClientWidth = 586
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label8: TLabel
+    Left = 192
+    Top = 8
+    Width = 146
+    Height = 20
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label1: TLabel
+    Left = 70
+    Top = 67
+    Width = 41
+    Height = 20
+    Caption = #1060#1048#1054
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label2: TLabel
+    Left = 66
+    Top = 115
+    Width = 16
+    Height = 20
+    Caption = 'In'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label3: TLabel
+    Left = 54
+    Top = 256
+    Width = 89
+    Height = 20
+    Caption = #1056#1077#1079#1091#1083#1100#1090#1072#1090
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label4: TLabel
+    Left = 66
+    Top = 154
+    Width = 29
+    Height = 20
+    Caption = 'Out'
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Label5: TLabel
+    Left = 66
+    Top = 207
+    Width = 43
+    Height = 20
+    Caption = #1044#1072#1090#1072
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object DBText2: TDBText
+    Left = 325
+    Top = 262
+    Width = 119
+    Height = 30
+    Alignment = taRightJustify
+    DataField = 'Rezultat'
+    DataSource = DataModuleDB.DataSource3
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Button2: TButton
+    Left = 305
+    Top = 304
+    Width = 166
+    Height = 41
+    Caption = #1047#1072#1082#1088#1099#1090#1100
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button1: TButton
+    Left = 95
+    Top = 304
+    Width = 153
+    Height = 41
+    Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+  end
+  object DBEdit2: TDBEdit
+    Left = 200
+    Top = 112
+    Width = 283
+    Height = 28
+    DataField = 'In'
+    DataSource = DataModuleDB.DataSource1
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 2
+  end
+  object DBEditEh1: TDBEditEh
+    Left = 200
+    Top = 64
+    Width = 283
+    Height = 28
+    DataField = 'FioSel'
+    DataSource = DataModuleDB.DataSource1
+    DynProps = <>
+    EditButtons = <>
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 3
+    Visible = True
+  end
+  object DBEdit1: TDBEdit
+    Left = 200
+    Top = 151
+    Width = 281
+    Height = 28
+    DataField = 'Out'
+    DataSource = DataModuleDB.DataSource1
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 4
+  end
+  object DBEdit3: TDBEdit
+    Left = 200
+    Top = 199
+    Width = 281
+    Height = 28
+    DataField = 'Data'
+    DataSource = DataModuleDB.DataSource1
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 5
+  end
+end

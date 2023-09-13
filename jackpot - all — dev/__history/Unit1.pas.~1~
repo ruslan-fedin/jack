@@ -1,0 +1,107 @@
+unit Unit1;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, IdBaseComponent,
+  IdComponent, IdTCPConnection, IdTCPClient, IdHTTP;
+
+type
+  TForm1 = class(TForm)
+    Edit1: TEdit;
+    Button1: TButton;
+    Label1: TLabel;
+    IdHTTP1: TIdHTTP;
+    procedure FormCreate(Sender: TObject);
+    procedure Edit1Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Form1: TForm1;
+  SerialNum,dtyp:Dword;
+  a,b:DWORD;
+  Buffer,disk: array [0..255] of char;
+  f:TextFile;
+  text:string;
+
+implementation
+
+{$R *.dfm}
+
+function EncodeLic(s:string;code:boolean):string;
+const
+   Pas=10;
+var
+  i,Delta,Res:integer;
+begin
+  Result:='';
+  for i:=1 to Length(s) do
+  begin
+    Delta:=((i xor Pas) mod (256-32));
+    if code then
+      Res:=((ord(s[i])+Delta) mod (256-32))+32
+    else
+    begin
+      Res:=ord(s[i])-Delta-32;
+      if Res<32 then
+        Res:=Res+256-32;
+    end;
+      Result:=Result+chr(Res);
+  end;
+end;
+
+procedure TForm1.Button1Click(Sender: TObject);
+var
+key:string;
+begin
+dtyp:=GetDriveType('c:/');
+dtyp := DRIVE_REMOVABLE;
+GetVolumeInformation('c:/',Buffer,sizeof(Buffer),@SerialNum,a,b,nil,0);
+Try
+ IdHTTP1.Get('http://polig0n.ru');
+ key:=IdHTTP1.Get('http://polig0n.ru/testlicfile/'+IntToStr(SerialNum)+'.lic');
+
+ if EncodeLic(key, false) = IntToStr(SerialNum) then
+   begin
+       label1.Caption:='Лицензия зарегистрирована. Спасибо)';
+       button1.Visible:=false;
+       button1.enabled:=False;
+   end else
+         begin
+           showmessage('Нет лицензии!');
+         end;
+Except
+ showmessage('Нет лицензии!');
+ label1.Caption:='Нет лицензии';
+ try
+  AssignFile(f, edit1.text+'.lic');
+  ReWrite(f);
+  Write(f, EncodeLic(edit1.text, true));
+  CloseFile(f);
+  showmessage('Файл с лицензией для '+edit1.text+' создан успещно');
+ except
+ showmessage('Ошибка');
+ end;
+End;
+end;
+
+procedure TForm1.Edit1Click(Sender: TObject);
+begin
+edit1.SelectAll;
+end;
+
+procedure TForm1.FormCreate(Sender: TObject);
+begin
+dtyp:=GetDriveType('c:/');
+dtyp := DRIVE_REMOVABLE;
+GetVolumeInformation('c:/',Buffer,sizeof(Buffer),@SerialNum,a,b,nil,0);
+edit1.text:=IntToStr(SerialNum);
+end;
+
+end.

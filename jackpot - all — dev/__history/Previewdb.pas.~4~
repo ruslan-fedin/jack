@@ -1,0 +1,29 @@
+unit Previewdb;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxPreview, frxADOComponents;
+
+type
+  TPreview = class(TForm)
+    frxPreview1: TfrxPreview;
+    frxReport1: TfrxReport;
+    frxADOComponents1: TfrxADOComponents;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Preview: TPreview;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule;
+
+end.

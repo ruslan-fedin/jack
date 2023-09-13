@@ -1,0 +1,14 @@
+object TQvery: TTQvery
+  Left = 0
+  Top = 0
+  Caption = 'TQvery'
+  ClientHeight = 516
+  ClientWidth = 702
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -12
+  Font.Name = 'Segoe UI'
+  Font.Style = []
+  TextHeight = 15
+end

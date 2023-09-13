@@ -1,0 +1,9 @@
+﻿[TQuery.DataSource1]
+Visible=False
+
+[DataModuleDB.ADOTableWorks]
+Visible=False
+
+[DataModuleDB.ADOQuery3]
+Visible=False
+

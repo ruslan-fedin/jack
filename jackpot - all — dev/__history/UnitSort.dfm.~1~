@@ -1,0 +1,161 @@
+object Sotr: TSotr
+  Left = 0
+  Top = 0
+  Caption = #1057#1086#1090#1088#1091#1076#1085#1080#1082#1080
+  ClientHeight = 521
+  ClientWidth = 700
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 700
+    Height = 65
+    Align = alTop
+    Caption = 'Panel1'
+    TabOrder = 0
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 456
+    Width = 700
+    Height = 65
+    Align = alBottom
+    Caption = 'Panel1'
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 698
+      Height = 63
+      Align = alClient
+      TabOrder = 0
+      ExplicitTop = 32
+      ExplicitHeight = 48
+    end
+  end
+  object DBGridEh1: TDBGridEh
+    Left = 0
+    Top = 65
+    Width = 700
+    Height = 391
+    PopupMenuParams.BuildMenuOnPopup = True
+    PopupMenuParams.UseIndicatorMenu = True
+    Align = alClient
+    AutoFitColWidths = True
+    Border.Color = clBtnShadow
+    Border.EdgeBorders = []
+    Border.ExtendedDraw = True
+    DataGrouping.Color = clWindow
+    DataGrouping.Font.Charset = DEFAULT_CHARSET
+    DataGrouping.Font.Color = clWindowText
+    DataGrouping.Font.Height = -11
+    DataGrouping.Font.Name = 'Microsoft Sans Serif'
+    DataGrouping.Font.Style = []
+    DataGrouping.ParentColor = False
+    DataGrouping.ParentFont = False
+    DataGrouping.ShiftFolldataGroupRow = False
+    DataSource = DataModuleDB.DataSource4
+    DynProps = <>
+    EditActions = [geaCopyEh, geaSelectAllEh]
+    EvenRowColor = clWindow
+    Flat = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    FooterRowCount = 1
+    FooterParams.Font.Charset = DEFAULT_CHARSET
+    FooterParams.Font.Color = clWindowText
+    FooterParams.Font.Height = -13
+    FooterParams.Font.Name = 'Microsoft Sans Serif'
+    FooterParams.Font.Style = [fsBold]
+    FooterParams.ParentFont = False
+    FooterParams.RowHeight = 5
+    FooterParams.RowLines = 1
+    GridLineParams.ColorScheme = glcsThemedEh
+    GridLineParams.GridBoundaries = True
+    IndicatorOptions = [gioShowRecNoEh]
+    IndicatorParams.FillStyle = cfstSolidEh
+    IndicatorParams.RecNoShowStep = 5
+    IndicatorTitle.ShowDropDownSign = True
+    IndicatorTitle.TitleButton = True
+    OddRowColor = 16772332
+    Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiSelect]
+    OptionsEh = [dghFixed3D, dghResizeWholeRightPart, dghHighlightFocus, dghClearSelection, dghAutoSortMarking, dghMultiSortMarking, dghTraceColSizing, dghIncSearch, dghPreferIncSearch, dghRowHighlight, dghDblClickOptimizeColWidth, dghDialogFind, dghShowRecNo, dghColumnResize, dghColumnMove, dghHotTrack, dghExtendVertLines]
+    ParentFont = False
+    ParentShowHint = False
+    RowDetailPanel.BevelEdges = []
+    RowDetailPanel.BorderStyle = bsNone
+    RowHeight = 22
+    RowSizingAllowed = True
+    ShowHint = True
+    EditButtonsShowOptions = [sebShowOnlyForCurCellEh, sebShowOnlyForCurRowEh, sebShowOnlyWhenGridActiveEh, sebShowOnlyWhenDataEditingEh]
+    SortLocal = True
+    STFilter.FilterButtonDrawTime = fbdtWhenCellHotEh
+    STFilter.Font.Charset = DEFAULT_CHARSET
+    STFilter.Font.Color = clWindowText
+    STFilter.Font.Height = -13
+    STFilter.Font.Name = 'Microsoft Sans Serif'
+    STFilter.Font.Style = []
+    STFilter.InstantApply = True
+    STFilter.Local = True
+    STFilter.ParentFont = False
+    STFilter.Visible = True
+    SumList.Active = True
+    SumList.VirtualRecords = True
+    TabOrder = 2
+    TitleParams.FillStyle = cfstGradientEh
+    TitleParams.Font.Charset = DEFAULT_CHARSET
+    TitleParams.Font.Color = clWindowText
+    TitleParams.Font.Height = -16
+    TitleParams.Font.Name = 'Microsoft Sans Serif'
+    TitleParams.Font.Style = []
+    TitleParams.MultiTitle = True
+    TitleParams.ParentFont = False
+    TitleParams.SecondColor = 16382457
+    TitleParams.SortMarkerStyle = smstFrameEh
+    TitleParams.VTitleMargin = 5
+    Columns = <
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Kod'
+        Footers = <>
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Fio'
+        Footers = <>
+        Width = 280
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Data'
+        Footers = <>
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Rol'
+        Footers = <>
+        Width = 127
+      end>
+    object RowDetailData: TRowDetailPanelControlEh
+    end
+  end
+end

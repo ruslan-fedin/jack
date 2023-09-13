@@ -1,0 +1,60 @@
+object WorksRemove: TWorksRemove
+  Left = 0
+  Top = 0
+  BorderIcons = [biSystemMenu, biMinimize]
+  Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+  ClientHeight = 97
+  ClientWidth = 349
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Label8: TLabel
+    Left = 96
+    Top = 8
+    Width = 137
+    Height = 20
+    Caption = #1059#1076#1072#1083#1080#1090#1100' '#1079#1072#1087#1080#1089#1100
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clMaroon
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = [fsBold]
+    ParentFont = False
+  end
+  object Button1: TButton
+    Left = 8
+    Top = 48
+    Width = 138
+    Height = 33
+    Caption = #1044#1072
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 0
+  end
+  object Button2: TButton
+    Left = 199
+    Top = 48
+    Width = 138
+    Height = 33
+    Caption = #1053#1077#1090
+    Font.Charset = RUSSIAN_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    ParentFont = False
+    TabOrder = 1
+    OnClick = Button2Click
+  end
+end

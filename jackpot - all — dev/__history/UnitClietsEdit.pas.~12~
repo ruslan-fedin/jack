@@ -1,0 +1,104 @@
+unit UnitClietsEdit;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, Vcl.ComCtrls, Vcl.ExtDlgs,
+  Vcl.ExtCtrls, Vcl.DBCtrls, Vcl.Imaging.jpeg, Vcl.Imaging.pngimage;
+
+type
+  TClientsEdit = class(TForm)
+    Button2: TButton;
+    Edit3: TEdit;
+    Edit2: TEdit;
+    Button1: TButton;
+    Label9: TLabel;
+    Label8: TLabel;
+    Label7: TLabel;
+    Label2: TLabel;
+    Label1: TLabel;
+    Edit1: TEdit;
+    Label3: TLabel;
+    OpenPictureDialog1: TOpenPictureDialog;
+    Button3: TButton;
+    Image1: TImage;
+    DBMemo1: TDBMemo;
+    procedure FormShow(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button3Click(Sender: TObject);
+    procedure FormCreate(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  ClientsEdit: TClientsEdit;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule;
+
+procedure TClientsEdit.Button1Click(Sender: TObject);
+begin
+  DatamoduleDB.ADOTableClients.Edit;
+  //DatamoduleDB.ADOTableClients.Insert;
+  //DatamoduleDB.ADOTableClients.Refresh;
+
+//DatamoduleDB.ADOTableClients.FieldByName('KodClient').Value:=Label9.caption;
+DatamoduleDB.ADOTableClients.FieldByName('FIO').Value:=Edit2.Text;
+DatamoduleDB.ADOTableClients.FieldByName('Note').Value:=Edit3.Text;
+DatamoduleDB.ADOTableClients.FieldByName('Telephone').Value:=Edit1.Text;
+
+ClientsEdit.close;
+
+end;
+
+procedure TClientsEdit.Button2Click(Sender: TObject);
+begin
+  ClientsEdit.close;
+end;
+
+procedure TClientsEdit.Button3Click(Sender: TObject);
+var pic:string;
+begin
+
+   DatamoduleDB.ADOTableClients.Edit;
+  if ClientsEdit.OpenPictureDialog1.Execute then ClientsEdit.DBMemo1.Text:=ClientsEdit.OpenPictureDialog1.FileName;
+   pic:=ClientsEdit.DBMemo1.Text;
+   ClientsEdit.Image1.Picture.LoadFromFile(pic);
+   DatamoduleDB.ADOTableClients.Post;
+  //  DatamoduleDB.ADOTableClients.Refresh;
+
+
+
+end;
+
+procedure TClientsEdit.FormCreate(Sender: TObject);
+begin
+if ClientsEdit.DBMemo1.Text='' then ClientsEdit.Image1.Picture.LoadFromFile('img\default.png')
+else    ClientsEdit.Image1.Picture.LoadFromFile(ClientsEdit.DBMemo1.Text);
+
+end;
+
+procedure TClientsEdit.FormShow(Sender: TObject);
+begin
+
+Label9.caption:=DatamoduleDB.ADOTableClients.FieldByName('KodClient').Value;
+Edit2.Text:=DatamoduleDB.ADOTableClients.FieldByName('FIO').Value;
+Edit1.Text:=DatamoduleDB.ADOTableClients.FieldByName('Telephone').Value;
+//Проверяем если поле пустое
+with DatamoduleDB.ADOTableClients.Fields[3] do
+  if (IsNull or (AsString='')) then
+    Edit3.Text := ''
+  else
+  Edit3.Text:=DatamoduleDB.ADOTableClients.FieldByName('Note').Value;
+  
+end;
+
+end.

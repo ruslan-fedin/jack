@@ -1,0 +1,56 @@
+unit UnitOtchet;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.ExtCtrls, DBGridEhGrouping,
+  ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
+  DBGridEh, Vcl.DBCtrls, Vcl.StdCtrls, Vcl.ExtDlgs;
+
+type
+  TOtchet = class(TForm)
+    Panel1: TPanel;
+    Panel2: TPanel;
+    DBNavigator1: TDBNavigator;
+    DBGridEh2: TDBGridEh;
+    OpenPictureDialog1: TOpenPictureDialog;
+    Panel3: TPanel;
+    Button1: TButton;
+    Button2: TButton;
+    Button3: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    Button6: TButton;
+    procedure FormShow(Sender: TObject);
+    procedure Button6Click(Sender: TObject);
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Otchet: TOtchet;
+
+implementation
+
+{$R *.dfm}
+
+uses DataModule, FotoUnit;
+
+procedure TOtchet.Button6Click(Sender: TObject);
+begin
+DatamoduleDB.ADOTableClients.Edit;
+
+
+Foto.Caption:= DatamoduleDB.ADOTableClients.FieldValues['FIO'];
+Foto.ShowModal;
+end;
+
+procedure TOtchet.FormShow(Sender: TObject);
+begin
+//DataModuleDB.ADOTableOtc.Active:=true;
+end;
+
+end.

@@ -1,0 +1,45 @@
+unit Previewdb;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, frxClass, frxPreview, frxADOComponents,
+  Data.DB, Data.Win.ADODB;
+
+type
+  TPreview = class(TForm)
+    frxReport1: TfrxReport;
+    frxPreview1: TfrxPreview;
+    DataSource1: TDataSource;
+    DataSource2: TDataSource;
+    ADOQuery2: TADOQuery;
+    ADOQuery2KodClient: TAutoIncField;
+    ADOQuery2FIO: TWideStringField;
+    ADOQuery2Telephone: TWideStringField;
+    ADOQuery2Note: TWideStringField;
+    ADOQuery1: TADOQuery;
+    ADOQuery1Kod: TAutoIncField;
+    ADOQuery1KodFIO: TIntegerField;
+    ADOQuery1Data: TDateTimeField;
+    ADOQuery1JackPot: TIntegerField;
+    ADOQuery1P: TIntegerField;
+    ADOQuery1Payment: TIntegerField;
+    ADOQuery1Field1: TStringField;
+    ADOQuery1FieldSumma: TIntegerField;
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Preview: TPreview;
+
+implementation
+
+{$R *.dfm}
+
+uses Query, DataModule, Works, Client;
+
+end.

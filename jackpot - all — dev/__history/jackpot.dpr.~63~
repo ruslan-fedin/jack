@@ -1,0 +1,66 @@
+program jackpot;
+
+{$R *.dres}
+
+uses
+  Vcl.Forms,
+  Run in 'Run.pas' {TRun},
+  DataModule in 'DataModule.pas' {DataModuleDB: TDataModule},
+  Client in 'Client.pas' {TClient},
+  Query in 'Query.pas' {TQuery},
+  UnitWorksEdit in 'UnitWorksEdit.pas' {WorksEdit},
+  UnitWorksRemove in 'UnitWorksRemove.pas' {WorksRemove},
+  UnitWorksAdd in 'UnitWorksAdd.pas' {WorksAdd},
+  ABOUT in 'ABOUT.pas' {AboutBox},
+  AddClients in 'AddClients.pas' {ClientsAdd},
+  UnitClietsEdit in 'UnitClietsEdit.pas' {ClientsEdit},
+  UnitClietsRemove in 'UnitClietsRemove.pas' {ClientsRemove},
+  OpenBD in 'OpenBD.pas' {BDopen},
+  UnitLogo in 'UnitLogo.pas' {Logo},
+  FotoUnit in 'FotoUnit.pas' {Foto},
+  Vcl.Themes,
+  Vcl.Styles,
+  note in 'note.pas' {TNote},
+  UnitOtchet in 'UnitOtchet.pas' {Otchet},
+  UnitSort in 'UnitSort.pas' {Sotr},
+  UnitOtcAdd in 'UnitOtcAdd.pas' {OtcAdd},
+  UnitSettings in 'UnitSettings.pas' {Settings},
+  pass in 'pass.pas' {Password},
+  UnitTime in 'UnitTime.pas' {Time},
+  UnitOtcEdit in 'UnitOtcEdit.pas' {OtcEdit},
+  Unit1 in 'Unit1.pas' {Form1};
+
+{$R *.res}
+
+begin
+  Application.Initialize;
+  Application.MainFormOnTaskbar := True;
+  tclient := nil;
+  otchet := nil;
+  TQuery := nil;
+  Application.CreateForm(TDataModuleDB, DataModuleDB);
+  Application.CreateForm(TTRun, TRun);
+  Application.CreateForm(TTClient, TClient);
+  Application.CreateForm(TTQuery, TQuery);
+  Application.CreateForm(TWorksEdit, WorksEdit);
+  Application.CreateForm(TWorksRemove, WorksRemove);
+  Application.CreateForm(TWorksAdd, WorksAdd);
+  Application.CreateForm(TAboutBox, AboutBox);
+  Application.CreateForm(TClientsAdd, ClientsAdd);
+  Application.CreateForm(TClientsEdit, ClientsEdit);
+  Application.CreateForm(TClientsRemove, ClientsRemove);
+  Application.CreateForm(TBDopen, BDopen);
+  Application.CreateForm(TLogo, Logo);
+  Application.CreateForm(TFoto, Foto);
+  Application.CreateForm(TTNote, TNote);
+  Application.CreateForm(TOtchet, Otchet);
+  Application.CreateForm(TSotr, Sotr);
+  Application.CreateForm(TOtcAdd, OtcAdd);
+  Application.CreateForm(TSettings, Settings);
+  Application.CreateForm(TPassword, Password);
+  Application.CreateForm(TTime, Time);
+  Application.CreateForm(TOtcEdit, OtcEdit);
+  Application.CreateForm(TForm1, Form1);
+  Application.Run;
+
+end.

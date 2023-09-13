@@ -1,0 +1,82 @@
+unit UnitSettings;
+
+interface
+
+uses
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Vcl.StdCtrls, DBGridEhGrouping,
+  ToolCtrlsEh, DBGridEhToolCtrls, DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh,
+  DBGridEh;
+
+type
+  TSettings = class(TForm)
+    Button3: TButton;
+    Button1: TButton;
+    Button2: TButton;
+    Button4: TButton;
+    Button5: TButton;
+    procedure Button3Click(Sender: TObject);
+    procedure Button1Click(Sender: TObject);
+    procedure Button2Click(Sender: TObject);
+    procedure Button4Click(Sender: TObject);
+    procedure Button5Click(Sender: TObject);
+
+  private
+    { Private declarations }
+  public
+    { Public declarations }
+  end;
+
+var
+  Settings: TSettings;
+   // SerialNum,dtyp:Dword;
+
+implementation
+
+{$R *.dfm}
+
+uses OpenBD, pass, DataModule, UnitTime, Run, UnitLicense;
+
+
+procedure TSettings.Button1Click(Sender: TObject);
+begin
+DataModuleDB.DataSourcelogin.Enabled:=true;
+DataModuleDB.ADOTablelogin.Active:=true;
+DataModuleDB.ADOQuerylogin.SQL.Text := 'SELECT * FROM avtoriz';
+DataModuleDB.ADOQuerylogin.ExecSQL;
+DataModuleDB.ADOQuerylogin.Open;
+DataModuleDB.ADOQuerylogin.Last;
+password.ShowModal;
+end;
+
+procedure TSettings.Button2Click(Sender: TObject);
+begin
+
+time.ShowModal;
+
+ DataModuleDB.ADOTableTime.Close;
+ DataModuleDB.ADOTableTime.Open;
+
+
+end;
+
+procedure TSettings.Button3Click(Sender: TObject);
+begin
+ BDopen.ShowModal;
+end;
+
+
+
+
+procedure TSettings.Button4Click(Sender: TObject);
+begin
+Settings.Close;
+end;
+
+procedure TSettings.Button5Click(Sender: TObject);
+begin
+License.ShowModal;
+end;
+
+
+end.

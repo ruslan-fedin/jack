@@ -1,0 +1,387 @@
+object Otchet: TOtchet
+  Left = 411
+  Top = 0
+  Caption = #1054#1090#1095#1077#1090
+  ClientHeight = 569
+  ClientWidth = 1084
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  PixelsPerInch = 96
+  TextHeight = 13
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 1084
+    Height = 57
+    Align = alTop
+    Caption = 'Panel1'
+    TabOrder = 0
+    object Button1: TButton
+      Left = 16
+      Top = 18
+      Width = 145
+      Height = 33
+      Caption = #1044#1086#1073#1072#1074#1080#1090#1100
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      OnClick = Button1Click
+    end
+    object Button2: TButton
+      Left = 167
+      Top = 18
+      Width = 145
+      Height = 33
+      Caption = #1048#1079#1084#1077#1085#1080#1090#1100
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 1
+    end
+    object Button3: TButton
+      Left = 318
+      Top = 18
+      Width = 145
+      Height = 33
+      Caption = #1059#1076#1072#1083#1080#1090#1100
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 2
+    end
+    object Button4: TButton
+      Left = 469
+      Top = 18
+      Width = 145
+      Height = 33
+      Caption = #1069#1082#1089#1087#1086#1088#1090' Excel'
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 3
+    end
+    object Button5: TButton
+      Left = 627
+      Top = 18
+      Width = 145
+      Height = 33
+      Caption = #1047#1072#1082#1088#1099#1090#1100
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clBlack
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 4
+      OnClick = Button5Click
+    end
+    object CheckBox1: TCheckBox
+      Left = 952
+      Top = 21
+      Width = 97
+      Height = 17
+      Caption = #1060#1086#1090#1086
+      Color = clBtnFace
+      Ctl3D = False
+      DoubleBuffered = False
+      Font.Charset = DEFAULT_CHARSET
+      Font.Color = clRed
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentColor = False
+      ParentCtl3D = False
+      ParentDoubleBuffered = False
+      ParentFont = False
+      TabOrder = 5
+      OnClick = CheckBox1Click
+    end
+  end
+  object Panel2: TPanel
+    Left = 0
+    Top = 512
+    Width = 1084
+    Height = 57
+    Align = alBottom
+    Caption = 'Panel2'
+    TabOrder = 1
+    object DBNavigator1: TDBNavigator
+      Left = 1
+      Top = 1
+      Width = 1082
+      Height = 55
+      Align = alClient
+      TabOrder = 0
+    end
+  end
+  object Panel3: TPanel
+    Left = 814
+    Top = 57
+    Width = 270
+    Height = 455
+    Align = alRight
+    TabOrder = 2
+    Visible = False
+    object Image1: TImage
+      Left = 0
+      Top = 6
+      Width = 265
+      Height = 360
+      Proportional = True
+    end
+    object Button7: TButton
+      Left = 6
+      Top = 369
+      Width = 259
+      Height = 33
+      Caption = #1054#1073#1079#1086#1088
+      Font.Charset = RUSSIAN_CHARSET
+      Font.Color = clWindowText
+      Font.Height = -16
+      Font.Name = 'Microsoft Sans Serif'
+      Font.Style = []
+      ParentFont = False
+      TabOrder = 0
+      Visible = False
+      OnClick = Button6Click
+    end
+    object DBMemo1: TDBMemo
+      Left = 6
+      Top = 322
+      Width = 259
+      Height = 41
+      DataField = 'Foto'
+      DataSource = DataModuleDB.DataSource3
+      TabOrder = 1
+      Visible = False
+    end
+  end
+  object DBGridEh1: TDBGridEh
+    Left = 0
+    Top = 57
+    Width = 814
+    Height = 455
+    PopupMenuParams.BuildMenuOnPopup = True
+    PopupMenuParams.UseIndicatorMenu = True
+    Align = alClient
+    AutoFitColWidths = True
+    Border.Color = clBtnShadow
+    Border.EdgeBorders = []
+    Border.ExtendedDraw = True
+    Ctl3D = True
+    DataGrouping.Color = clWindow
+    DataGrouping.Font.Charset = DEFAULT_CHARSET
+    DataGrouping.Font.Color = clWindowText
+    DataGrouping.Font.Height = -11
+    DataGrouping.Font.Name = 'Microsoft Sans Serif'
+    DataGrouping.Font.Style = []
+    DataGrouping.ParentColor = False
+    DataGrouping.ParentFont = False
+    DataGrouping.ShiftFolldataGroupRow = False
+    DataSource = DataModuleDB.DataSource3
+    DynProps = <>
+    EditActions = [geaCopyEh, geaSelectAllEh]
+    EvenRowColor = clWindow
+    Flat = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    FooterRowCount = 1
+    FooterParams.Font.Charset = DEFAULT_CHARSET
+    FooterParams.Font.Color = clWindowText
+    FooterParams.Font.Height = -16
+    FooterParams.Font.Name = 'Microsoft Sans Serif'
+    FooterParams.Font.Style = []
+    FooterParams.HorzLines = True
+    FooterParams.ParentFont = False
+    FooterParams.RowHeight = 5
+    FooterParams.RowLines = 1
+    FooterParams.VertLines = True
+    GridLineParams.ColorScheme = glcsThemedEh
+    GridLineParams.DataHorzLines = True
+    GridLineParams.DataVertLines = True
+    GridLineParams.GridBoundaries = True
+    GridLineParams.VertEmptySpaceStyle = dessNonEh
+    IndicatorOptions = []
+    IndicatorParams.FillStyle = cfstSolidEh
+    IndicatorParams.RecNoShowStep = 5
+    IndicatorTitle.ShowDropDownSign = True
+    IndicatorTitle.TitleButton = True
+    EmptyDataInfo.Text = ',#.00'
+    OddRowColor = 16772332
+    Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiSelect]
+    OptionsEh = [dghFixed3D, dghResizeWholeRightPart, dghHighlightFocus, dghClearSelection, dghAutoSortMarking, dghMultiSortMarking, dghTraceColSizing, dghIncSearch, dghPreferIncSearch, dghRowHighlight, dghDblClickOptimizeColWidth, dghDialogFind, dghColumnResize, dghColumnMove, dghHotTrack]
+    ParentCtl3D = False
+    ParentFont = False
+    ParentShowHint = False
+    RowDetailPanel.BevelEdges = []
+    RowDetailPanel.BorderStyle = bsNone
+    RowHeight = 2
+    RowLines = 1
+    RowSizingAllowed = True
+    ShowHint = True
+    EditButtonsShowOptions = [sebShowOnlyForCurCellEh, sebShowOnlyForCurRowEh, sebShowOnlyWhenGridActiveEh, sebShowOnlyWhenDataEditingEh]
+    SortLocal = True
+    STFilter.FilterButtonDrawTime = fbdtWhenCellHotEh
+    STFilter.Font.Charset = DEFAULT_CHARSET
+    STFilter.Font.Color = clWindowText
+    STFilter.Font.Height = -13
+    STFilter.Font.Name = 'Microsoft Sans Serif'
+    STFilter.Font.Style = []
+    STFilter.InstantApply = True
+    STFilter.Local = True
+    STFilter.ParentFont = False
+    STFilter.Visible = True
+    SumList.Active = True
+    SumList.VirtualRecords = True
+    TabOrder = 3
+    TitleParams.FillStyle = cfstGradientEh
+    TitleParams.Font.Charset = DEFAULT_CHARSET
+    TitleParams.Font.Color = clWindowText
+    TitleParams.Font.Height = -16
+    TitleParams.Font.Name = 'Microsoft Sans Serif'
+    TitleParams.Font.Style = []
+    TitleParams.MultiTitle = True
+    TitleParams.ParentFont = False
+    TitleParams.SecondColor = 16382457
+    TitleParams.SortMarkerStyle = smstFrameEh
+    TitleParams.VTitleMargin = 5
+    VertScrollBar.SmoothStep = True
+    Columns = <
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Kod'
+        Footers = <>
+        Title.TitleButton = True
+        Visible = False
+      end
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'KodClients'
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'FioSel'
+        Footer.Alignment = taCenter
+        Footer.Font.Charset = DEFAULT_CHARSET
+        Footer.Font.Color = clMaroon
+        Footer.Font.Height = -16
+        Footer.Font.Name = 'Microsoft Sans Serif'
+        Footer.Font.Style = [fsBold]
+        Footer.Value = #1048#1090#1086#1075#1086':'
+        Footer.ValueType = fvtStaticText
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Data'
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DisplayFormat = ',#.00'
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'In'
+        Font.Charset = DEFAULT_CHARSET
+        Font.Color = clWindowText
+        Font.Height = -16
+        Font.Name = 'Microsoft Sans Serif'
+        Font.Style = []
+        Footer.Alignment = taCenter
+        Footer.DisplayFormat = ',#.00'
+        Footer.Font.Charset = DEFAULT_CHARSET
+        Footer.Font.Color = clMaroon
+        Footer.Font.Height = -16
+        Footer.Font.Name = 'Microsoft Sans Serif'
+        Footer.Font.Style = [fsBold]
+        Footer.ValueType = fvtSum
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DisplayFormat = ',#.00'
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Out'
+        Footer.Alignment = taCenter
+        Footer.DisplayFormat = ',#.00'
+        Footer.Font.Charset = DEFAULT_CHARSET
+        Footer.Font.Color = clMaroon
+        Footer.Font.Height = -16
+        Footer.Font.Name = 'Microsoft Sans Serif'
+        Footer.Font.Style = [fsBold]
+        Footer.ValueType = fvtSum
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        Alignment = taCenter
+        CellButtons = <>
+        DisplayFormat = ',#.00'
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Rez'
+        Footer.Alignment = taCenter
+        Footer.DisplayFormat = ',#.00'
+        Footer.Font.Charset = DEFAULT_CHARSET
+        Footer.Font.Color = clMaroon
+        Footer.Font.Height = -16
+        Footer.Font.Name = 'Microsoft Sans Serif'
+        Footer.Font.Style = [fsBold]
+        Footer.ValueType = fvtSum
+        Footers = <>
+        Title.TitleButton = True
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Foto'
+        Footers = <>
+        Title.TitleButton = True
+        Visible = False
+      end>
+    object RowDetailData: TRowDetailPanelControlEh
+    end
+  end
+end

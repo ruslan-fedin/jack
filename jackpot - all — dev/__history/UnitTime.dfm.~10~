@@ -1,0 +1,221 @@
+object Time: TTime
+  Left = 0
+  Top = 0
+  Caption = 'Time'
+  ClientHeight = 491
+  ClientWidth = 747
+  Color = clBtnFace
+  Font.Charset = DEFAULT_CHARSET
+  Font.Color = clWindowText
+  Font.Height = -11
+  Font.Name = 'Tahoma'
+  Font.Style = []
+  OldCreateOrder = False
+  Position = poDesktopCenter
+  OnCreate = FormCreate
+  PixelsPerInch = 96
+  TextHeight = 13
+  object DBGridEh1: TDBGridEh
+    Left = 0
+    Top = 289
+    Width = 747
+    Height = 159
+    PopupMenuParams.BuildMenuOnPopup = True
+    PopupMenuParams.UseIndicatorMenu = True
+    Align = alClient
+    AutoFitColWidths = True
+    Border.Color = clBtnShadow
+    Border.EdgeBorders = []
+    Border.ExtendedDraw = True
+    Ctl3D = True
+    DataGrouping.Color = clWindow
+    DataGrouping.Font.Charset = DEFAULT_CHARSET
+    DataGrouping.Font.Color = clWindowText
+    DataGrouping.Font.Height = -11
+    DataGrouping.Font.Name = 'Microsoft Sans Serif'
+    DataGrouping.Font.Style = []
+    DataGrouping.ParentColor = False
+    DataGrouping.ParentFont = False
+    DataGrouping.ShiftFolldataGroupRow = False
+    DataSource = DataModuleDB.DataSourceTimeTabl
+    DynProps = <>
+    EditActions = [geaCopyEh, geaSelectAllEh]
+    EvenRowColor = clWindow
+    Flat = True
+    Font.Charset = DEFAULT_CHARSET
+    Font.Color = clWindowText
+    Font.Height = -16
+    Font.Name = 'Microsoft Sans Serif'
+    Font.Style = []
+    FooterRowCount = 1
+    FooterParams.Font.Charset = DEFAULT_CHARSET
+    FooterParams.Font.Color = clWindowText
+    FooterParams.Font.Height = -16
+    FooterParams.Font.Name = 'Microsoft Sans Serif'
+    FooterParams.Font.Style = []
+    FooterParams.HorzLines = True
+    FooterParams.ParentFont = False
+    FooterParams.RowHeight = 5
+    FooterParams.RowLines = 1
+    GridLineParams.ColorScheme = glcsThemedEh
+    GridLineParams.DataHorzLines = True
+    GridLineParams.DataVertLines = True
+    GridLineParams.GridBoundaries = True
+    GridLineParams.VertEmptySpaceStyle = dessNonEh
+    IndicatorOptions = [gioShowRecNoEh]
+    IndicatorParams.FillStyle = cfstSolidEh
+    IndicatorParams.RecNoShowStep = 5
+    IndicatorTitle.ShowDropDownSign = True
+    IndicatorTitle.TitleButton = True
+    EmptyDataInfo.Text = ',#.00'
+    OddRowColor = 16772332
+    Options = [dgEditing, dgTitles, dgColumnResize, dgColLines, dgRowLines, dgTabs, dgAlwaysShowSelection, dgConfirmDelete, dgCancelOnExit, dgMultiSelect]
+    OptionsEh = [dghFixed3D, dghResizeWholeRightPart, dghHighlightFocus, dghClearSelection, dghAutoSortMarking, dghMultiSortMarking, dghTraceColSizing, dghIncSearch, dghPreferIncSearch, dghRowHighlight, dghDblClickOptimizeColWidth, dghDialogFind, dghShowRecNo, dghColumnResize, dghColumnMove, dghHotTrack]
+    ParentCtl3D = False
+    ParentFont = False
+    ParentShowHint = False
+    RowDetailPanel.BevelEdges = []
+    RowDetailPanel.BorderStyle = bsNone
+    RowHeight = 2
+    RowLines = 1
+    RowSizingAllowed = True
+    ShowHint = True
+    EditButtonsShowOptions = [sebShowOnlyForCurCellEh, sebShowOnlyForCurRowEh, sebShowOnlyWhenGridActiveEh, sebShowOnlyWhenDataEditingEh]
+    SortLocal = True
+    STFilter.FilterButtonDrawTime = fbdtWhenCellHotEh
+    STFilter.Font.Charset = DEFAULT_CHARSET
+    STFilter.Font.Color = clWindowText
+    STFilter.Font.Height = -13
+    STFilter.Font.Name = 'Microsoft Sans Serif'
+    STFilter.Font.Style = []
+    STFilter.InstantApply = True
+    STFilter.Local = True
+    STFilter.ParentFont = False
+    STFilter.Visible = True
+    SumList.Active = True
+    SumList.VirtualRecords = True
+    TabOrder = 0
+    TitleParams.FillStyle = cfstGradientEh
+    TitleParams.Font.Charset = DEFAULT_CHARSET
+    TitleParams.Font.Color = clWindowText
+    TitleParams.Font.Height = -16
+    TitleParams.Font.Name = 'Microsoft Sans Serif'
+    TitleParams.Font.Style = []
+    TitleParams.MultiTitle = True
+    TitleParams.ParentFont = False
+    TitleParams.SecondColor = 16382457
+    TitleParams.SortMarkerStyle = smstFrameEh
+    TitleParams.VTitleMargin = 5
+    Columns = <
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'id'
+        Footers = <>
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Data_int'
+        Footers = <>
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'Data_out'
+        Footers = <>
+      end
+      item
+        CellButtons = <>
+        DynProps = <>
+        EditButtons = <>
+        FieldName = 'data'
+        Footers = <>
+        Width = 241
+      end>
+    object RowDetailData: TRowDetailPanelControlEh
+    end
+  end
+  object Panel1: TPanel
+    Left = 0
+    Top = 0
+    Width = 747
+    Height = 289
+    Align = alTop
+    TabOrder = 1
+    object Label1: TLabel
+      Left = 224
+      Top = 173
+      Width = 113
+      Height = 19
+      Caption = 'Label1'
+    end
+    object Label2: TLabel
+      Left = 57
+      Top = 51
+      Width = 65
+      Height = 13
+      Caption = #1044#1072#1090#1072' '#1085#1072#1095#1072#1083#1072
+    end
+    object Label3: TLabel
+      Left = 248
+      Top = 51
+      Width = 26
+      Height = 13
+      Caption = #1044#1085#1077#1081
+    end
+    object Label4: TLabel
+      Left = 40
+      Top = 264
+      Width = 49
+      Height = 13
+      Caption = 'Label4'
+    end
+    object Edit2: TEdit
+      Left = 208
+      Top = 88
+      Width = 121
+      Height = 21
+      TabOrder = 0
+    end
+    object Button1: TButton
+      Left = 208
+      Top = 133
+      Width = 121
+      Height = 25
+      Caption = #1056#1072#1089#1095#1077#1090' '#1076#1072#1090#1099
+      TabOrder = 1
+      OnClick = Button1Click
+    end
+    object MonthCalendar1: TMonthCalendar
+      Left = 11
+      Top = 88
+      Width = 191
+      Height = 160
+      Date = 45176.000000000000000000
+      TabOrder = 2
+      OnClick = MonthCalendar1Click
+    end
+    object Button2: TButton
+      Left = 208
+      Top = 223
+      Width = 121
+      Height = 25
+      Caption = #1047#1072#1087#1080#1089#1072#1090#1100' '#1074' '#1073#1072#1079#1091
+      TabOrder = 3
+      OnClick = Button2Click
+    end
+  end
+  object DBNavigator1: TDBNavigator
+    Left = 0
+    Top = 448
+    Width = 747
+    Height = 43
+    DataSource = DataModuleDB.DataSourceTimeTabl
+    Align = alBottom
+    TabOrder = 2
+  end
+end
