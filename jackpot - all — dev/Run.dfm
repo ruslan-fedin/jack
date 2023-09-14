@@ -7257,7 +7257,6 @@ object TRun: TTRun
     Height = 19
     Panels = <>
     SimpleText = 'mmnm'
-    ExplicitWidth = 375
   end
   object IdHTTP1: TIdHTTP
     ProxyParams.BasicAuthentication = False

@@ -3,22 +3,22 @@ unit Query;
 interface
 
 uses
-  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants, System.Classes, Vcl.Graphics,
+  Winapi.Windows, Winapi.Messages, System.SysUtils, System.Variants,
+  System.Classes, Vcl.Graphics,
   Vcl.Controls, Vcl.Forms, Vcl.Dialogs, Data.DB, Vcl.Grids, Vcl.DBGrids,
-  EhlibADO,DbUtilsEh,
+  EhlibADO, DbUtilsEh,
   Vcl.StdCtrls, Vcl.ExtCtrls, Data.Win.ADODB, System.Rtti,
   System.Bindings.Outputs, Vcl.Bind.Editors, Data.Bind.EngExt,
   Vcl.Bind.DBEngExt, Data.Bind.Components, Data.Bind.DBScope, Data.FMTBcd,
   Data.SqlExpr, Vcl.DBCtrls, DBGridEhGrouping, ToolCtrlsEh, DBGridEhToolCtrls,
   DynVarsEh, EhLibVCL, GridsEh, DBAxisGridsEh, DBGridEh, Vcl.Mask, DBCtrlsEh,
   Vcl.Menus, DBSumLst, DataSetImpExpEh, PrnDbgeh, Vcl.ExtDlgs, Vcl.ToolWin,
-  Vcl.ComCtrls, frxDCtrl,MemTableDataEh,DBGridEhImpExp, MemTableEh,Shellapi,
+  Vcl.ComCtrls, frxDCtrl, MemTableDataEh, DBGridEhImpExp, MemTableEh, Shellapi,
   Data.Bind.Controls, Vcl.Buttons, Vcl.Bind.Navigator, System.ImageList,
   Vcl.ImgList, FireDAC.Stan.Intf, FireDAC.Stan.Param, FireDAC.Phys.Intf,
   FireDAC.Stan.Option, FireDAC.Stan.Error, FireDAC.UI.Intf, FireDAC.Stan.Def,
   FireDAC.Stan.Pool, FireDAC.Stan.Async, FireDAC.Phys, FireDAC.Phys.MSAcc,
   FireDAC.Phys.MSAccDef, FireDAC.VCLUI.Wait, FireDAC.Comp.Client;
-
 
 type
   TTQuery = class(TForm)
@@ -48,8 +48,6 @@ type
     CheckBox1: TCheckBox;
     CheckBox2: TCheckBox;
     DBNavigator1: TDBNavigator;
-  
-
 
     procedure DBGridEh11SortMarkingChanged(Sender: TObject);
     procedure FormCreate(Sender: TObject);
@@ -90,28 +88,25 @@ implementation
 uses DataModule, Works, Previewdb, UnitWorksAdd, UnitWorksEdit, UnitWorksRemove,
   ABOUT, FotoUnit, Run, func;
 
-
-
-  //Обновляем таблицу после добавления
+// Обновляем таблицу после добавления
 procedure TTQuery.BindNavigator1Click(Sender: TObject; Button: TNavigateButton);
 begin
- if button = nbRefresh then
-   begin
-      DataModuleDB.ADOQueryWorks.Requery;
-      DataModuleDB.ADOQueryWorks.Refresh;
+  if Button = nbRefresh then
+  begin
+    DataModuleDB.ADOQueryWorks.Requery;
+    DataModuleDB.ADOQueryWorks.Refresh;
 
-
-   end;
+  end;
 end;
-//Эксплуатирую Excell  затем открываем Файл
+
+// Эксплуатирую Excell  затем открываем Файл
 procedure TTQuery.Button1Click(Sender: TObject);
 begin
 
-         DataModuleDB.ADOQueryWorks.Active:=true;
-         DataModuleDB.ADOQueryWorks.Insert;
+  DataModuleDB.ADOQueryWorks.Active := true;
+  DataModuleDB.ADOQueryWorks.Insert;
 
-
-WorksAdd.ShowModal;
+  WorksAdd.ShowModal;
 end;
 
 procedure TTQuery.Button2Click(Sender: TObject);
@@ -122,109 +117,120 @@ end;
 
 procedure TTQuery.Button3Click(Sender: TObject);
 begin
-WorksRemove.ShowModal;
+  WorksRemove.ShowModal;
 end;
 
 procedure TTQuery.Button4Click(Sender: TObject);
 var
-  Path:string;
+  Path: string;
 begin
-  GetDir(0,Path);
-  ExportDBGridEhToXlsx(DBGridEh1,Path+'\File1.xlsx',[]);
+  GetDir(0, Path);
+  ExportDBGridEhToXlsx(DBGridEh1, Path + '\File1.xlsx', []);
 
   ShowMessage('Экспорт завершен');
-begin
- GetDir(0,Path);
- ShellExecute(Handle, nil, PChar(Path + '\File1.xlsx'), nil, nil, SW_SHOWNORMAL);
-end;
+  begin
+    GetDir(0, Path);
+    ShellExecute(Handle, nil, PChar(Path + '\File1.xlsx'), nil, nil,
+      SW_SHOWNORMAL);
+  end;
 end;
 
 procedure TTQuery.Button5Click(Sender: TObject);
 begin
   TQuery.Close;
 end;
- procedure TTQuery.CheckBox1Click(Sender: TObject);
+
+procedure TTQuery.CheckBox1Click(Sender: TObject);
 begin
-if CheckBox1.Checked then
-   Panel3.Visible := true
-   else
-   Panel3.Visible := false;
+  if CheckBox1.Checked then
+    Panel3.Visible := true
+  else
+    Panel3.Visible := false;
 end;
 
-//Установлю фильтр по умолчанию
+// Установлю фильтр по умолчанию
 procedure TTQuery.DBGridEh11ApplyFilter(Sender: TObject);
 begin
   DBGridEh1.DefaultApplyFilter;
 
 end;
 
-
- //Сортировка по умолчанию
+// Сортировка по умолчанию
 procedure TTQuery.DBGridEh11SortMarkingChanged(Sender: TObject);
 begin
   DBGridEh1.DefaultApplySorting;
 
 end;
- //Просматриваем отчёт
+
+// Просматриваем отчёт
 procedure TTQuery.Excel1Click(Sender: TObject);
 begin
-Preview.frxReport1.ShowReport();
-Preview.frxReport1.Export(Preview.frxXLSExport1);
+  Preview.frxReport1.ShowReport();
+  Preview.frxReport1.Export(Preview.frxXLSExport1);
 end;
- //Экспорт в Excel
+
+// Экспорт в Excel
 procedure TTQuery.Excel2Click(Sender: TObject);
 var
-  Path:string;
+  Path: string;
 begin
-  GetDir(0,Path);
-  ExportDBGridEhToXlsx(DBGridEh1,Path+'\File1.xlsx',[]);
+  GetDir(0, Path);
+  ExportDBGridEhToXlsx(DBGridEh1, Path + '\File1.xlsx', []);
   ShowMessage('Экспорт завершен');
-begin
- GetDir(0,Path);
- ShellExecute(Handle, nil, PChar(Path + '\File1.xlsx'), nil, nil, SW_SHOWNORMAL);
+  begin
+    GetDir(0, Path);
+    ShellExecute(Handle, nil, PChar(Path + '\File1.xlsx'), nil, nil,
+      SW_SHOWNORMAL);
+  end;
 end;
-end;
-//Устанавливаю Маркер фильтра
+
+// Устанавливаю Маркер фильтра
 procedure TTQuery.FormCreate(Sender: TObject);
 begin
-DbUtilsEh.SQLFilterMarker := '1=1 AND';
+  DbUtilsEh.SQLFilterMarker := '1=1 AND';
 end;
 
 procedure TTQuery.FormShow(Sender: TObject);
 
-
-//data_worksD: Tdate;
-//data_worksS: string;
 begin
 
-if role = 'User' then
-   begin
+  if role = 'User' then
+  begin
+    // Выбираем один день
+    DataModuleDB.ADOQueryWorks.Active := false;
+    DataModuleDB.ADOQueryWorks.sql.clear;
+    DataModuleDB.ADOQueryWorks.sql.text :=
+      'select * from Works where Data =:log';
+    DataModuleDB.ADOQueryWorks.Parameters[0].Value := GetDataNow();
+    DataModuleDB.ADOQueryWorks.Active := true;
 
-DataModuleDB.ADOQueryWorks.active := false;
-DataModuleDB.ADOQueryWorks.sql.clear;
-DataModuleDB.ADOQueryWorks.sql.text:='select * from Works where Data =:log';
-DataModuleDB.ADOQueryWorks.Parameters[0].Value := GetDataNow() ;
-DataModuleDB.ADOQueryWorks.Active:= true;
-   end;
+    //
+    TQuery.N4.Visible := false;
+
+    DBNavigator1.Controls[ord(nbDelete)].Enabled := false;
+    DBGridEh1.ReadOnly := true;
+    Button3.Enabled := false;
+  end;
+
 end;
 
 procedure TTQuery.N11Click(Sender: TObject);
 begin
-TQuery.Close;
+  TQuery.Close;
 end;
- procedure TTQuery.N13Click(Sender: TObject);
+
+procedure TTQuery.N13Click(Sender: TObject);
 begin
-AboutBox.show;
+  AboutBox.show;
 end;
 
 procedure TTQuery.N2Click(Sender: TObject);
 begin
 
-          DataModuleDB.ADOQueryWorks.Active:=true;
-         DataModuleDB.ADOQueryWorks.Insert;
+  DataModuleDB.ADOQueryWorks.Active := true;
+  DataModuleDB.ADOQueryWorks.Insert;
 
-
-WorksAdd.ShowModal;
+  WorksAdd.ShowModal;
 
 end;
 
@@ -236,36 +242,34 @@ end;
 
 procedure TTQuery.N4Click(Sender: TObject);
 begin
-WorksRemove.ShowModal;
+  WorksRemove.ShowModal;
 end;
 
 procedure TTQuery.N6Click(Sender: TObject);
 begin
-close;
+  Close;
 end;
 
-//Просматриваем отчёт
+// Просматриваем отчёт
 procedure TTQuery.N8Click(Sender: TObject);
 begin
-Preview.Show;
-Preview.frxReport1.ShowReport();
+  Preview.show;
+  Preview.frxReport1.ShowReport();
 end;
- //Экспорт отчета
+
+// Экспорт отчета
 procedure TTQuery.Pdf1Click(Sender: TObject);
 begin
-Preview.frxReport1.ShowReport();
-Preview.frxReport1.Export(Preview.frxPDFExport1);
+  Preview.frxReport1.ShowReport();
+  Preview.frxReport1.Export(Preview.frxPDFExport1);
 end;
 
 procedure TTQuery.Word1Click(Sender: TObject);
 begin
 
-Preview.frxReport1.ShowReport();
-Preview.frxReport1.Export(Preview.frxDOCXExport1);
-
+  Preview.frxReport1.ShowReport();
+  Preview.frxReport1.Export(Preview.frxDOCXExport1);
 
 end;
-
-
 
 end.

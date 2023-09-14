@@ -289,8 +289,8 @@ object DataModuleDB: TDataModuleDB
     Parameters = <>
     SQL.Strings = (
       'select * from works')
-    Left = 208
-    Top = 192
+    Left = 136
+    Top = 184
     object ADOQueryWorksKod: TAutoIncField
       DisplayLabel = 'id'
       FieldName = 'Kod'

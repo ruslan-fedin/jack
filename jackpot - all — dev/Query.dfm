@@ -24,8 +24,6 @@ object TQuery: TTQuery
     Width = 1154
     Height = 19
     Panels = <>
-    ExplicitTop = 592
-    ExplicitWidth = 1094
   end
   object DBGridEh1: TDBGridEh
     Left = 0
@@ -236,7 +234,6 @@ object TQuery: TTQuery
     Height = 121
     Align = alTop
     TabOrder = 2
-    ExplicitWidth = 1094
     object Button1: TButton
       Left = 16
       Top = 18
@@ -350,9 +347,6 @@ object TQuery: TTQuery
     Align = alRight
     TabOrder = 3
     Visible = False
-    ExplicitLeft = 824
-    ExplicitTop = 70
-    ExplicitHeight = 474
     object Image1: TImage
       Left = 0
       Top = 6
@@ -392,10 +386,9 @@ object TQuery: TTQuery
     Width = 1154
     Height = 48
     DataSource = DataModuleDB.DataSource2
+    VisibleButtons = [nbFirst, nbPrior, nbNext, nbLast, nbInsert, nbDelete, nbEdit, nbPost]
     Align = alBottom
     TabOrder = 4
-    ExplicitTop = 544
-    ExplicitWidth = 1094
   end
   object MainMenu1: TMainMenu
     Left = 96

@@ -52,8 +52,6 @@ type
 
   private
 
-
-
     { Private declarations }
   public
 
@@ -90,7 +88,6 @@ var
   keyharddisk: string;
   day_end: string;
   role: string;
-
 
 var
   put: string;
@@ -240,7 +237,7 @@ begin
 
   serialNumberDisk();
 
-  //GetDateInt();
+  // GetDateInt();
   Label4.Caption := 'Дата: ' + datetostr(data_int);
   //
   // writeDataInt();
@@ -371,8 +368,6 @@ function TTRun.isRole(Login: string): String;
 
 begin
 
-
-
   // Выбираем роли за носим в переменную
   DataModuleDB.ADOQuerylogin.active := false;
   DataModuleDB.ADOQuerylogin.sql.clear;
@@ -385,18 +380,17 @@ begin
   role := DataModuleDB.ADOQuerylogin.FieldByName('rol').AsString;
   ShowMessage(role);
 
-  //Условия ролям
+  // Условия ролям
 
   if role = 'User' then
 
-  BtnSettings.Enabled:=false;
+  begin
+  BtnSettings.Enabled := false;
+  BtnOtc.Enabled := false;
 
-
-
-
+  end;
   if role = 'Admin' then
-
-  Settings.Btnpass.enabled:=false;
+   Settings.BtnPass.Enabled := false;
 
 
 
@@ -409,11 +403,6 @@ begin
     r:=DataModuleDB.ADOQuerylogin.FieldByName('rol').AsString;
     showmessage(r); }
 
-
-
-
-
-
 end;
 
 // Путь к базе данных
@@ -424,7 +413,6 @@ begin
   put := Ini.ReadString('Путь к БД', 'ConSrt', put);
   Ini.Free;
 end;
-
 
 // Время программы
 function TTRun.timeProg: string;
