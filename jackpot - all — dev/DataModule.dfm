@@ -79,7 +79,7 @@ object DataModuleDB: TDataModuleDB
     Top = 176
   end
   object DataSource1: TDataSource
-    DataSet = ADOTableClients
+    DataSet = ADOQueryClients
     Left = 64
     Top = 120
   end
@@ -388,8 +388,8 @@ object DataModuleDB: TDataModuleDB
     Parameters = <>
     SQL.Strings = (
       'select * from otc')
-    Left = 224
-    Top = 248
+    Left = 264
+    Top = 344
     object ADOQueryOtcKod: TAutoIncField
       DisplayLabel = #1050#1086#1076
       DisplayWidth = 10
@@ -442,6 +442,58 @@ object DataModuleDB: TDataModuleDB
       KeyFields = 'KodClients'
       Size = 80
       Lookup = True
+    end
+  end
+  object ADOQueryClients: TADOQuery
+    Active = True
+    Connection = ADOConnectionJackPot
+    CursorType = ctStatic
+    AfterScroll = ADOQueryClientsAfterScroll
+    Parameters = <>
+    SQL.Strings = (
+      'select * from Clients')
+    Left = 200
+    Top = 120
+    object ADOQueryClientsKodClient: TAutoIncField
+      DisplayLabel = #1050#1086#1076' '#1082#1083#1080#1077#1085#1090#1072
+      FieldName = 'KodClient'
+      ReadOnly = True
+    end
+    object ADOQueryClientsFIO: TWideStringField
+      DisplayLabel = #1060#1048#1054
+      FieldName = 'FIO'
+      Size = 255
+    end
+    object ADOQueryClientsTelephone: TWideStringField
+      DisplayLabel = #1058#1077#1083#1077#1092#1086#1085
+      DisplayWidth = 15
+      FieldName = 'Telephone'
+      Size = 255
+    end
+    object ADOQueryClientsPasport: TWideStringField
+      DisplayLabel = #1055#1072#1089#1087#1086#1088#1090
+      DisplayWidth = 15
+      FieldName = 'Pasport'
+      Size = 255
+    end
+    object ADOQueryClientsDate: TDateTimeField
+      DisplayLabel = #1044#1072#1090#1072
+      FieldName = 'Date'
+    end
+    object ADOQueryClientsOvd: TWideStringField
+      DisplayLabel = #1050#1077#1084' '#1074#1099#1076#1072#1085
+      FieldName = 'Ovd'
+      Size = 255
+    end
+    object ADOQueryClientsNote: TWideStringField
+      DisplayLabel = #1047#1072#1084#1077#1090#1082#1080
+      FieldName = 'Note'
+      Size = 255
+    end
+    object ADOQueryClientsFoto: TWideStringField
+      DisplayLabel = #1060#1086#1090#1086
+      FieldName = 'Foto'
+      Size = 255
     end
   end
 end

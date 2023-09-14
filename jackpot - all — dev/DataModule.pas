@@ -70,14 +70,24 @@ type
     ADOQueryOtcOut: TFloatField;
     ADOQueryOtcRez: TFloatField;
     ADOQueryOtcFoto: TStringField;
+    ADOQueryClients: TADOQuery;
+    ADOQueryClientsKodClient: TAutoIncField;
+    ADOQueryClientsFIO: TWideStringField;
+    ADOQueryClientsTelephone: TWideStringField;
+    ADOQueryClientsPasport: TWideStringField;
+    ADOQueryClientsDate: TDateTimeField;
+    ADOQueryClientsOvd: TWideStringField;
+    ADOQueryClientsNote: TWideStringField;
+    ADOQueryClientsFoto: TWideStringField;
     procedure ADOQueryWorksCalcFields(DataSet: TDataSet);
     procedure ADOQuery1CalcFields(DataSet: TDataSet);
     procedure ADOTableWorksAfterScroll(DataSet: TDataSet);
     procedure ADOTableClientsAfterScroll(DataSet: TDataSet);
     procedure ADOTableOtcCalcFields(DataSet: TDataSet);
     procedure ADOTableOtcAfterScroll(DataSet: TDataSet);
-    procedure DataSourcelogtablUpdateData(Sender: TObject);
     procedure ADOQueryWorksAfterScroll(DataSet: TDataSet);
+    procedure sc(DataSet: TDataSet);
+    procedure ADOQueryClientsAfterScroll(DataSet: TDataSet);
 
 
   private
@@ -103,6 +113,17 @@ begin
   // DataModuleDB.ADOQuery1FieldSumma.AsInteger:= DataModuleDB.ADOQuery1JackPot.Value + DataModuleDB.ADOQuery1P.Value + DataModuleDB.ADOQuery1Payment.Value;
   // Получаем номер написи
   // DataModuleDB.ADOTableWorks.AsInteger:=abs(DataModuleDB.ADOTableWorks.RecNo);
+end;
+
+procedure TDataModuleDB.ADOQueryClientsAfterScroll(DataSet: TDataSet);
+begin
+  if not Assigned(tclient) then
+    Exit;
+  if tclient.DBMemo1.Text = '' then
+    tclient.Image1.Picture.LoadFromFile('default.png')
+
+  else
+    tclient.Image1.Picture.LoadFromFile(tclient.DBMemo1.Text)
 end;
 
 procedure TDataModuleDB.ADOQueryWorksAfterScroll(DataSet: TDataSet);
@@ -175,9 +196,8 @@ begin
   // Worksedit.Label9.Caption:= ADOTableWorks.FieldByName('KodFIO').AsString;
 end;
 
-procedure TDataModuleDB.DataSourcelogtablUpdateData(Sender: TObject);
+procedure TDataModuleDB.sc(DataSet: TDataSet);
 begin
-
 end;
 
 { DataModuleDB.ADOConnectionJackPot.ConnectionString:='';
